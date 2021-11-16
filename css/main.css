@@ -1,0 +1,30 @@
+.greatvibes{
+    font-family: 'Great Vibes', cursive;
+}
+
+.noto_sans{
+    font-family: 'Noto Sans JP', cursive;
+}
+
+.ubuntu_regular{
+    font-family: 'Ubuntu', sans-serif;
+}
+.ubuntu_light{
+    font-family: 'Ubuntu', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+}
+.ubuntu_bold{
+    font-family: 'Ubuntu', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+}
+.yeon{
+    font-family: 'Yeon Sung', cursive;            
+}
+.lobster{
+    font-family: 'Lobster', cursive;
+}
+.pb_font{
+    font-family: 'Playball', cursive;
+}
