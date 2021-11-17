@@ -243,9 +243,9 @@
           </div>
         </div>
 
-        <form action="">
+        <form id="email1" action="">
           <input type="text" placeholder="Name" class="box" />
-          <input type="email" placeholder="Email" class="box" />
+          <input type="text" placeholder="Email" class="box" />
           <input type="text" placeholder="Project" class="box" />
           <textarea
             name=""
@@ -255,7 +255,7 @@
             class="box message"
             placeholder="Message"
           ></textarea>
-          <button type="submit" class="btn">
+          <button id="submit" type="submit" class="btn">
             Submit <i class="fas fa-paper-plane"></i>
           </button>
         </form>
@@ -275,5 +275,6 @@
 
     <!-- custom js file link  -->
     <script src="js/all.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
   </body>
 </html>
