@@ -238,9 +238,11 @@ header .navbar ul li a:hover{
     padding: 2rem;
     margin:1rem;
     border-radius:5px;
+    text-decoration: none;
 }
 
-.about .row .counter .box i{
+
+.about .row .counter .box  i{
     font-size: 4rem;
     color:var(--blue);
 }
@@ -300,6 +302,8 @@ header .navbar ul li a:hover{
     color:#fff;
     background:var(--blue);
 }
+
+
 
 .skills .box-container .box .icon{
     position: absolute;
