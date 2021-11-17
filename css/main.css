@@ -204,7 +204,7 @@ header .navbar ul li a:hover{
 .about .row .counter{
     flex:1 1 48rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
     padding: 2rem 1rem;
     padding-right: 6rem;
@@ -265,6 +265,7 @@ header .navbar ul li a:hover{
     padding-left: 4rem;
     border-left: .2rem solid #fff;
     position: relative;
+    min-height:195px;
 }
 
 .skills .box-container .box span{
