@@ -340,6 +340,11 @@ header .navbar ul li a:hover{
     margin:2rem;
     overflow: hidden;
     cursor: pointer;
+    border-top: 4px solid var(--blue);
+    border-right: 4px solid var(--blue);
+    border-left: 4px solid #05768A;
+    border-bottom: 4px solid #05768A;
+    text=decoration:none;
 }
 
 .portfolio .box-container .box img{
