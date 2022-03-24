@@ -204,7 +204,7 @@ header .navbar ul li a:hover{
 .about .row .counter{
     flex:1 1 48rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
     padding: 2rem 1rem;
     padding-right: 6rem;
@@ -255,7 +255,7 @@ header .navbar ul li a:hover{
 .skills .box-container{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
     padding:1rem 0;
     padding-left: 3rem;
@@ -328,7 +328,7 @@ header .navbar ul li a:hover{
 .portfolio .box-container{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
     padding:2rem 0;
 }
@@ -344,7 +344,7 @@ header .navbar ul li a:hover{
     border-right: 4px solid var(--blue);
     border-left: 4px solid #05768A;
     border-bottom: 4px solid #05768A;
-    text=decoration:none;
+    text-decoration:none;
 }
 
 .portfolio .box-container .box img{
@@ -454,6 +454,15 @@ header .navbar ul li a:hover{
         padding:1rem 4rem;
     }
 
+    .about .row .counter {
+        justify-content: center;
+        margin: 0 4rem;
+    }
+
+    .skills .box-container , .portfolio .box-container{
+        justify-content: center;
+    }
+
 }
 
 @media (max-width:991px){
@@ -480,6 +489,11 @@ header .navbar ul li a:hover{
 
     html{
         font-size: 50%;
+    }
+
+    .about .row .counter {
+        justify-content: center;
+        padding-right: unset;
     }
  
  }
