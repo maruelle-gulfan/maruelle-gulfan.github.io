@@ -17,6 +17,19 @@ document.addEventListener("mousemove", (e)=>{
 });
 
 
+//PARALLAX
+document.addEventListener('mousemove', parallax);
+function parallax(e){
+  document.querySelectorAll(".object").forEach(function(move){
+    const movingValue = move.getAttribute("data-value");
+    const x = (e.clientX * movingValue) /200;
+    const y = (e.clientY * movingValue) /200;
+
+    move.style.transform = `translateX(${x}px) translateY(${y}px)`
+  });
+}
+
+
 
 
 
