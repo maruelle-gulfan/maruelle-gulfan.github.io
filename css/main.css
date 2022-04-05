@@ -13,15 +13,20 @@
     /* text-transform: capitalize; */
     transition: all .2s linear;
 }
+a{
+    cursor: none;
+}
 
 *::selection{
     background:var(--blue);
     color:#333;
 }
 
+
 html{
     font-size: 62.5%;
     overflow-x: hidden;
+    cursor: none;
 }
 
 html::-webkit-scrollbar{
@@ -40,6 +45,44 @@ body{
     background:#111;
     overflow-x: hidden;
     padding-left: 35rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.cursor{
+    z-index: 999999;
+    background: var(--blue);
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: 0 0 20px var(--blue),
+                0 0 60px var(--blue),
+                0 0 100px var(--blue);
+    animation: colors 5s infinite;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+@keyframes colors{
+    0%{
+        filter: hue-rotate(0deg);
+    }
+    100%{
+        filter: hue-rotate(360deg);
+    }
+}
+
+.cursor::before{
+    content: '';
+    position: absolute;
+    background: var(--blue);
+    width: 50px;
+    height: 50px;
+    opacity: 0.2;
+    transform: translate(-30%, -30%);
+    border-radius: 50%;
 }
 
 section{
@@ -100,6 +143,7 @@ header .user img{
     object-fit: cover;
     margin-bottom: 1rem;
     border:.7rem solid var(--blue);
+    transform: scale(1);
 }
 
 header .user .name{
