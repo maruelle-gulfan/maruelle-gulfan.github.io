@@ -252,17 +252,28 @@ header .navbar ul li a:hover{
     object-fit: cover;
 }
 
+.home .bg-main .container .img5{
+    position: absolute;
+    left: 28%;
+    top: 34%;
+    width: 250px;
+    height: 150px;
+    z-index: 22;
+}
+
 
 
 
 .home h3{
     font-size: 2.5rem;
     color:#fff;
+    z-index: 20;
 }
 
 .home h1{
     font-size:5rem;
     color:#fff;
+    z-index: 20;
 }
 
 .home h1 span{
@@ -273,6 +284,17 @@ header .navbar ul li a:hover{
     font-size:2rem;
     color:#eee;
     padding: 1rem 0;
+    z-index: 20;
+}
+
+.home a{
+    z-index: 20;
+    cursor: none;
+}
+
+.home a button{
+    z-index: 20;
+    cursor: none;
 }
 
 .about .row{
@@ -563,6 +585,13 @@ header .navbar ul li a:hover{
         justify-content: center;
     }
 
+    .home .bg-main .container .img5{
+        width: 150px;
+        height: 100px;
+        left: 33%;
+        top: 38%;
+    }
+
 }
 
 @media (max-width:991px){
@@ -595,6 +624,13 @@ header .navbar ul li a:hover{
         justify-content: center;
         padding-right: unset;
     }
+
+    .home .bg-main .container .img5{
+        width: 150px;
+        height: 100px;
+        left: 37%;
+        top: 38.6%;
+    }
  
  }
 
@@ -607,6 +643,8 @@ header .navbar ul li a:hover{
     .heading{
         margin:0 3rem;
     }
+
+    
 
     .about .row .counter .box{
         width: 100%;
@@ -623,5 +661,10 @@ header .navbar ul li a:hover{
     .contact .row form{
         margin:3rem 0;
     }
+ }
 
+ @media (max-width: 500px){
+    .home .bg-main .container .img5{
+        display: none;
+    }
  }

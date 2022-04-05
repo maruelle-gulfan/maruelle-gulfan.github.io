@@ -16,14 +16,18 @@ document.addEventListener("mousemove", (e)=>{
   timeout = setTimeout(mouseStopped, 3000);
 });
 
+document.addEventListener("mouseout", (e)=>{
+  cursor.style.display = "none";
+});
+
 
 //PARALLAX
 document.addEventListener('mousemove', parallax);
 function parallax(e){
   document.querySelectorAll(".object").forEach(function(move){
     const movingValue = move.getAttribute("data-value");
-    const x = (e.clientX * movingValue) /200;
-    const y = (e.clientY * movingValue) /200;
+    const x = (e.clientX * movingValue) /100;
+    const y = (e.clientY * movingValue) /150;
 
     move.style.transform = `translateX(${x}px) translateY(${y}px)`
   });
