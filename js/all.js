@@ -1,136 +1,232 @@
+var span = document.querySelector(".typewriter span");
+var textArr = span.getAttribute("data-text").split(", ");
+var maxTextIndex = textArr.length;
 
-const cursor = document.querySelector(".cursor");
-var timeout;
-document.addEventListener("mousemove", (e)=>{
-  let x = e.clientX;
-  let y = e.clientY;
+var sPerChar = 0.15;
+var sBetweenWord = 1.5;
+var textIndex = 0;
 
-  cursor.style.top = y + "px";
-  cursor.style.left = x + "px";
-  cursor.style.display = "block";
+typing(textIndex, textArr[textIndex]);
 
-  function mouseStopped(){
-    cursor.style.display = "none";
-  }
-  clearTimeout(timeout);
-  timeout = setTimeout(mouseStopped, 3000);
-});
+function typing(textIndex, text) {
+  var charIndex = 0;
+  var maxCharIndex = text.length - 1;
 
-document.addEventListener("mouseout", (e)=>{
-  cursor.style.display = "none";
-});
-
-
-//PARALLAX
-document.addEventListener('mousemove', parallax);
-function parallax(e){
-  document.querySelectorAll(".object").forEach(function(move){
-    const movingValue = move.getAttribute("data-value");
-    const x = (e.clientX * movingValue) /100;
-    const y = (e.clientY * movingValue) /150;
-
-    move.style.transform = `translateX(${x}px) translateY(${y}px)`
-  });
+  var typeInterval = setInterval(function () {
+    span.innerHTML += text[charIndex];
+    if (charIndex == maxCharIndex) {
+      clearInterval(typeInterval);
+      setTimeout(function () {
+        deleting(textIndex, text);
+      }, sBetweenWord * 1000);
+    } else {
+      charIndex += 1;
+    }
+  }, sPerChar * 1000);
 }
 
+function deleting(textIndex, text) {
+  var minCharIndex = 0;
+  var charIndex = text.length - 1;
+
+  var typeInterval = setInterval(function () {
+    span.innerHTML = text.substr(0, charIndex);
+    if (charIndex == minCharIndex) {
+      clearInterval(typeInterval);
+      textIndex + 1 == maxTextIndex ? (textIndex = 0) : (textIndex += 1);
+      setTimeout(function () {
+        typing(textIndex, textArr[textIndex]);
+      }, sBetweenWord * 1000);
+    } else {
+      charIndex -= 1;
+    }
+  }, sPerChar * 1000);
+}
+
+window.onload = function () {
+
+  
 
 
 
 
-$(document).ready(function(){
+  window.addEventListener("scroll", function (e) {
+    if (window.pageYOffset > -1) {
+      document.querySelector(".nav-home").classList.add("current");
+      document.querySelector(".nav-about").classList.remove("current");
+      document.querySelector(".nav-project").classList.remove("current");
+    }
+    if(window.pageYOffset > 890) {
+      document.querySelector(".nav-about").classList.add("current");
+      document.querySelector(".nav-home").classList.remove("current");
+      document.querySelector(".nav-skill").classList.remove("current");
+      document.querySelector(".nav-project").classList.remove("current");
+    }
+    if(window.pageYOffset > 1957) {
+      document.querySelector(".nav-skill").classList.add("current");
+      document.querySelector(".nav-home").classList.remove("current");
+      document.querySelector(".nav-about").classList.remove("current");
+      document.querySelector(".nav-project").classList.remove("current");
+    }
+    if(window.pageYOffset > 2950) {
+      document.querySelector(".nav-project").classList.add("current");
+      document.querySelector(".nav-home").classList.remove("current");
+      document.querySelector(".nav-about").classList.remove("current");
+      document.querySelector(".nav-skill").classList.remove("current");
+    }
+    if(window.pageYOffset > 20) {
+      document.querySelector("header").classList.add("change-color");
+    }
+     
+    else {
+      document.querySelector("header").classList.remove("change-color");
+      document.querySelector(".nav-about").classList.remove("current");
+      document.querySelector(".nav-skill").classList.remove("current");
+    }
 
-    $('#menu').click(function(){
-      $(this).toggleClass('fa-times');
-      $('header').toggleClass('toggle');
-    });
-  
-    $(window).on('scroll load',function(){
-  
-      $('#menu').removeClass('fa-times');
-      $('header').removeClass('toggle');
-  
-      if($(window).scrollTop() > 0){
-        $('.top').show();
-      }else{
-        $('.top').hide();
-      }
-  
-    });
-  
-    // smooth scrolling 
-  
-    $('a[href*="#"]').on('click',function(e){
-  
-      e.preventDefault();
-  
-      $('html, body').animate({
-  
-        scrollTop : $($(this).attr('href')).offset().top,
-  
-      },
-        500, 
-        'linear'
-      );
-  
-    });
-  
+    // const menu_btn = document.querySelector('.hamburger');
+    // const mobile_menu = document.querySelector('.mobile-nav')
+
+    // menu_btn.addEventListener('click', function() {
+    //   menu_btn.classList.toggle('is-active');
+    //   mobile_menu.classList.toggle('is-active');
+    // });
+
+
+    
+    
   });
 
 
-  function SendEmail(name, from, proj, inquiry) {
-    Email.send({
-      SecureToken : "eb324792-5e17-4a3e-a959-f24cf793b6ac",
-      To : from+"," +'maruelle24@gmail.com',
-      From : 'maruelle08@gmail.com',
-      Subject : "email from maruelle-gulfan.github.io",
-      // Body : "Name: "+name+"\nEmail:"+from+"\nProject:"+proj+"\nMessage:"+inquiry,
-      Body: `<html>
-              <head>
-              </head>
-              <body>
-                <div style=width:500px;min-height:500px;background-color:#1a1a1a;display:block;justify-content:center;color:#00B8F5;border-radius:10px;>
-                <div style="width:100%;text-align:center;padding-top:1rem;">
-                  <p style="font-size:28px;color:#00B8F5; text-align:center;">
-                    Inquiry
-                  </p>
-                </div>
-                  <div style="width:100%;color:#00B8F5;padding:1rem;">
-                    <p style="font-size:24px;margin:0">Name: <span style="font-size:18px; color:#fff; font-weight:700;">${name}</span></p> 
-                  </div>
-                  <div style="width:100%;color:#00B8F5;padding:1rem;">
-                    <p style="font-size:24px;margin:0">Email: <span style="font-size:18px; color:#fff; font-weight:700;text-decoration:none;">${from}</span></p> 
-                  </div>
-                  <div style="width:100%;color:#00B8F5;padding:1rem;">
-                    <p style="font-size:24px;margin:0">Project: <span style="font-size:18px; color:#fff; font-weight:700;">${proj}</span></p> 
-                  </div>
-                  <div style="width:100%;color:#00B8F5;padding:1rem;">
-                    <p style="font-size:24px;margin:0">Message: <span style="font-size:18px; color:#fff; font-weight:700;">${inquiry}</span></p> 
-                  </div>
-                </div>
-              
-              </body>
-            </html>`
-    }).then(
-        message => {
-            if (message !== "OK") {
-                alert(message)
-            }
-            else {
-                alert("Your inquiry has been submitted. Thank you!")
-            }
-        }
-    );
-}
+  const sideMenu = document.getElementById('side-nav');
+    const close = document.getElementById('close');
+    const menu = document.getElementById('hamburger-menu');
+      menu.addEventListener('click',function() {
+        sideMenu.className = 'open';
+        close.classList.remove('hide');
+      });
+      close.addEventListener('click',function() {
+        sideMenu.classList.remove('open');
+        close.className = 'hide';
+      });
 
-var emailForm = document.getElementById('email1')
-emailForm.addEventListener('submit', event => {
+  
 
-    event.preventDefault()
-    var name = event.target[0].value
-    var from = event.target[1].value
-    var proj = event.target[2].value
-    var inquiry = event.target[3].value
+  document.querySelector(".html").classList.add("skill-active");
 
-    SendEmail(name, from, proj, inquiry )
-})
+  document.getElementById("hexagon").addEventListener("click", function () {
+    if (this.classList.contains("hex-html")) {
+      document.querySelector(".css").classList.remove("skill-active");
+      document.querySelector(".react").classList.remove("skill-active");
+      document.querySelector(".js").classList.remove("skill-active");
+      document.querySelector(".node").classList.remove("skill-active");
+      document.querySelector(".wp").classList.remove("skill-active");
+      document.querySelector(".sass").classList.remove("skill-active");
 
+      document.querySelector(".html").classList.add("skill-active");
+    }
+  });
+  document.getElementById("hexagon2").addEventListener("click", function () {
+    if (this.classList.contains("hex-css")) {
+      document.querySelector(".html").classList.remove("skill-active");
+      document.querySelector(".react").classList.remove("skill-active");
+      document.querySelector(".js").classList.remove("skill-active");
+      document.querySelector(".node").classList.remove("skill-active");
+      document.querySelector(".wp").classList.remove("skill-active");
+      document.querySelector(".sass").classList.remove("skill-active");
+
+      document.querySelector(".css").classList.add("skill-active");
+    }
+  });
+  document.getElementById("hexagon3").addEventListener("click", function () {
+    if (this.classList.contains("hex-react")) {
+      document.querySelector(".css").classList.remove("skill-active");
+      document.querySelector(".html").classList.remove("skill-active");
+      document.querySelector(".js").classList.remove("skill-active");
+      document.querySelector(".node").classList.remove("skill-active");
+      document.querySelector(".wp").classList.remove("skill-active");
+      document.querySelector(".sass").classList.remove("skill-active");
+
+      document.querySelector(".react").classList.add("skill-active");
+    }
+  });
+  document.getElementById("hexagon4").addEventListener("click", function () {
+    if (this.classList.contains("hex-js")) {
+      document.querySelector(".css").classList.remove("skill-active");
+      document.querySelector(".react").classList.remove("skill-active");
+      document.querySelector(".html").classList.remove("skill-active");
+      document.querySelector(".node").classList.remove("skill-active");
+      document.querySelector(".wp").classList.remove("skill-active");
+      document.querySelector(".sass").classList.remove("skill-active");
+
+      document.querySelector(".js").classList.add("skill-active");
+    }
+  });
+  document.getElementById("hexagon5").addEventListener("click", function () {
+    if (this.classList.contains("hex-node")) {
+      document.querySelector(".css").classList.remove("skill-active");
+      document.querySelector(".react").classList.remove("skill-active");
+      document.querySelector(".js").classList.remove("skill-active");
+      document.querySelector(".html").classList.remove("skill-active");
+      document.querySelector(".wp").classList.remove("skill-active");
+      document.querySelector(".sass").classList.remove("skill-active");
+
+      document.querySelector(".node").classList.add("skill-active");
+    }
+  });
+  document.getElementById("hexagon6").addEventListener("click", function () {
+    if (this.classList.contains("hex-wp")) {
+      document.querySelector(".css").classList.remove("skill-active");
+      document.querySelector(".react").classList.remove("skill-active");
+      document.querySelector(".js").classList.remove("skill-active");
+      document.querySelector(".node").classList.remove("skill-active");
+      document.querySelector(".html").classList.remove("skill-active");
+      document.querySelector(".sass").classList.remove("skill-active");
+
+      document.querySelector(".wp").classList.add("skill-active");
+    }
+  });
+  document.getElementById("hexagon7").addEventListener("click", function () {
+    if (this.classList.contains("hex-sass")) {
+      document.querySelector(".css").classList.remove("skill-active");
+      document.querySelector(".react").classList.remove("skill-active");
+      document.querySelector(".js").classList.remove("skill-active");
+      document.querySelector(".node").classList.remove("skill-active");
+      document.querySelector(".wp").classList.remove("skill-active");
+      document.querySelector(".html").classList.remove("skill-active");
+
+      document.querySelector(".sass").classList.add("skill-active");
+    }
+  });
+
+
+
+  //FLIPBOOK 
+  // var numPanels = $('.panel').length;
+
+// if a panel is open, lower its z-idx
+// otherwise, set zIdx back to original
+// function checkZ($aPanel) {
+//   if ( $aPanel.hasClass('open') ) {
+//     $aPanel.css('z-index','1');
+//   } else {
+//     // set z-index back to original stored in data
+//     zIdx = $aPanel.data('zIdx');
+//     $aPanel.css( 'z-index', zIdx );
+//   }
+// }
+
+// // loop through all panels and reverse sort via zIdx
+// for (i=0; i<(numPanels); i++  ) {
+//   var zIdx =  numPanels-i;
+//   $('.panel').eq(i).css('z-index',zIdx).data('zIdx',zIdx);
+// }
+
+// // when clicking the front panel add class 'open' to panel
+// // if clicking bacl panel, remove 'open' from panel
+// $('.panel').on('click', '.front, .back', function() {
+//   $(this).parent('.panel').toggleClass('open');
+//   checkZ($(this).parent('.panel'));
+// });
+
+};

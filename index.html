@@ -1,338 +1,493 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="icon" href="img/Chino-04.png" sizes="32x32" />
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Maruelle's Portfolio</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!-- font awesome cdn link  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.js" integrity="sha512-CX7sDOp7UTAq+i1FYIlf9Uo27x4os+kGeoT7rgwvY+4dmjqV0IuE/Bl5hVsjnQPQiTOhAX1O2r2j5bjsFBvv/A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
-
-    <!-- custom css file link  -->
-    <link rel="stylesheet" href="css/main.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins@1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Smooch&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/animation.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="icon" href="img/Chino-04.png" sizes="32x32" />
+    <title>Maruelle | Portfolio</title>
   </head>
   <body>
-    <!-- header section starts  -->
-    <div class="cursor"></div>
-
-    <audio id="myAudio" autoplay loop>
-      <source src="./music/Astro.mp3" type="audio/mpeg" />
-    </audio>
-
     <header>
       <div class="user">
-        <img src="img/d.jpg" alt="" />
-        <h3 class="name">Maruelle Gulfan</h3>
-        <p class="post">Web Developer</p>
+        <a href="index.html">
+          <img class="logo" src="img/Chino-55.svg" alt="" />
+          <h3 class="name josefins">.me( )</h3>
+        </a>
+      </div>
+
+      <div id="close" class="hide">×</div>
+      <div id="hamburger-menu">
+        <div class="ham"></div>
+        <div class="ham"></div>
+      </div>
+      <div id="side-nav"> 
+        <ul>
+          <a href="#" class="active">
+            <li>Home</li>
+          </a>
+          <a href="#">
+            <li>A link</li>
+          </a>
+          <a href="#">
+            <li>Another link</li>
+          </a>
+          <a href="#">
+            <li>One more</li>
+          </a>
+          <a href="#">
+            <li>Last one</li>
+          </a>
+       </ul>
       </div>
 
       <nav class="navbar">
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#portfolio">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a class="nav-home" href="#home">.me( )</a></li>
+          <li><a class="nav-about" href="#about">.about( )</a></li>
+          <li><a class="nav-skill" href="#skills">.skill( )</a></li>
+          <li><a class="nav-project" href="#portfolio">.project( )</a></li>
+          <li><a class="nav-contact" href="#contact">.contact( )</a></li>
         </ul>
       </nav>
     </header>
+    <section class="hero" id="home">
+      <div class="text">
+        <h1>Maruelle<span class="blue">.Gulfan( )</span></h1>
+        <p class="typewriter">
+          &lt;<span data-text="Web, UI, WordPress"></span>
+          Developer /&gt;
+        </p>
+        <p class="quote">
+          /* If you're not prepared to be wrong, you'll never come up with
+          anything original. */
+        </p>
+        <p class="resume">
+          <span class="blue">`${</span>
+          <a href="pdf/Maruelle-CV.pdf" target="_blank">
+            Resumé <i class="fas fa-folder-open"></i
+          ></a>
+          <span class="blue">}`</span>
+        </p>
+      </div>
+      <div class="img"></div>
 
-    <!-- header section ends -->
-
-    <div id="menu" class="fas fa-bars"></div>
-
-    <!-- home section starts  -->
-
-    <section class="home" id="home">
-      <div class="bg-main">
-        <div class="container">
-          <img class="object img1" src="/img/Stars.png" data-value="3" alt="" />
-          <img class="object img2" src="/img/cre.png" data-value="5" alt="" />
-          <img
-            class="object img3"
-            src="/img/redmoon.png"
-            data-value="7"
-            alt=""
-          />
-          <img
-            class="object img4"
-            src="/img/yellowmoon.png"
-            data-value="9"
-            alt=""
-          />
-          <img class="object img5" src="/img/as.png" data-value="1" alt="" />
+      <div id="mouse-scroll">
+        <div class="mouse">
+          <div class="mouse-in"></div>
+        </div>
+        <div>
+          <span class="down-arrow-1"></span>
+          <span class="down-arrow-2"></span>
+          <span class="down-arrow-3"></span>
         </div>
       </div>
-
-      <h3>Hello World !</h3>
-      <h1>I'm <span>Maruelle Gulfan</span></h1>
-      <p>
-        Don't aim for success if you want it; just do what you love and believe
-        in, and it will come naturally.
-      </p>
-      <a href="#portfolio">
-        <button class="btn">My Projects <i class="fas fa-folder"></i></button>
-      </a>
     </section>
-
-    <!-- home section ends -->
-
-    <!-- about section starts  -->
-
-    <section class="about" id="about">
-      <h1 class="heading"><span>About</span> Me</h1>
-
-      <div class="row">
+    <section id="about" class="about">
+      <div class="heading">
+        <p class="josefins">
+          .about(<span class="blue">'Maruelle Gulfan'</span>)
+        </p>
+      </div>
+      <p class="comment inform">/* Personal Information */</p>
+      <div class="container">
         <div class="info">
-          <h3><span> Name : </span> Maruelle Gulfan</h3>
-          <h3><span> Nickname : </span> Chino</h3>
-          <h3><span> Age : </span> 26</h3>
-          <h3><span> Nationality : </span> Filipino</h3>
-          <h3><span> Languages : </span> English , Tagalog , Bisaya</h3>
-          <a href="pdf/Maruelle-CV.pdf" target="_blank">
-            <button class="btn">
-              My Resumé <i class="far fa-folder-open"></i>
-            </button>
-          </a>
-        </div>
+          <p class="comment">//Socials</p>
+          <div class="social-wrapper">
+            <a class="linkedIn" href="#"><i class="fab fa-linkedin"></i></a>
+            <a class="linkedIn" href="#"
+              ><i class="fab fa-github-square"></i
+            ></a>
+            <a class="linkedIn" href="#"
+              ><i class="fab fa-facebook-square"></i
+            ></a>
+            <a class="linkedIn" href="#"
+              ><i class="fab fa-instagram-square"></i
+            ></a>
+          </div>
+          <p class="comment">//Introduction</p>
+          <div class="introduction">
+            <p style="padding-top: 10px; text-align: justify">
+              Hello, I'm <span class="blue nick">Chino</span>. a Web Developer.
+              Currently a UI Developer at <span class="blue company">{</span>
+              <span class="company">dna:micro</span>
+              <span class="blue company">}</span>. I specialize on making
+              responsive website from scratch. I also like to add animations on
+              a website to make it more dynamic.
+            </p>
 
-        <div class="counter">
-          <div class="add-info">
-            <h3><span> Position : </span> Web Developer</h3>
-            <h3><span> Knowledgeable : </span> Wordpress , Laravel</h3>
-            <h3>
-              <span> Programming Languages : </span> ReactJS, NodeJS, HTML , CSS
-              , PHP , JavaScript , SASS , jQuery
-            </h3>
+            <p class="comment">//About Me</p>
+            <p class="myself">
+              const Name = <span class="blue">(</span>
+              <span class="myInfo">Maruelle Gulfan</span>
+              <span class="blue">)</span>
+            </p>
+
+            <p class="myself">
+              const Nickname = <span class="blue">(</span>
+              <span class="myInfo">Chino</span>
+              <span class="blue">)</span>
+            </p>
+
+            <p class="myself">
+              const Occupation = <span class="blue">(</span>
+              <span class="myInfo">Web Developer</span>
+              <span class="blue">)</span>
+            </p>
+
+            <p class="myself">
+              const Birthday = <span class="blue">(</span>
+              <span class="myInfo">February 14, 1995</span>
+              <span class="blue">)</span>
+            </p>
+
+            <p class="myself">
+              const Age = <span class="blue">(</span>
+              <span class="myInfo">27</span>
+              <span class="blue">)</span>
+            </p>
+
+            <p class="myself">
+              const Nationality = <span class="blue">(</span>
+              <span class="myInfo">Filipino</span>
+              <span class="blue">)</span>
+            </p>
+
+            <p class="myself">
+              const Address = <span class="blue">(</span>
+              <span style="font-size: 16px" class="myInfo"
+                >096-A Purok 2, Cadulawan, Minglanilla, Cebu</span
+              >
+              <span class="blue">)</span>
+            </p>
+
+            <p class="myself">
+              const Phone = <span class="blue">(</span>
+              <span class="myInfo">09179524753</span>
+              <span class="blue">)</span>
+            </p>
+
+            <p class="myself">
+              const Email = <span class="blue">(</span>
+              <span class="myInfo">maruelle08@gmail.com</span>
+              <span class="blue">)</span>
+            </p>
           </div>
 
-          <a
-            href="https://www.facebook.com/chingmaching08/"
-            class="box"
-            target="_blank"
-          >
-            <i class="fab fa-facebook"></i>
-          </a>
+          <p class="comment">//Hobbies</p>
+          <div class="hobbies">
+            <p class="basketball">
+              <i class="fas fa-basketball-ball"></i>
+            </p>
 
-          <a href="#" class="box" target="_blank">
-            <i class="fab fa-instagram"></i>
-          </a>
+            <p class="swimming">
+              <i class="fas fa-swimmer"></i>
+            </p>
 
-          <a
-            href="https://github.com/maruelle-gulfan"
-            class="box"
-            target="_blank"
-          >
-            <i class="fab fa-github"></i>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/maruelle-gulfan-a04777235/"
-            class="box"
-            target="_blank"
-          >
-            <i class="fab fa-linkedin"></i>
-          </a>
+            <p class="travel">
+              <i class="fas fa-plane"></i>
+            </p>
+            <p class="code">
+              <i class="fas fa-laptop-code"></i>
+            </p>
+          </div>
+        </div>
+        <div class="picture">
+          <img src="img/qwe.jpg" alt="" />
         </div>
       </div>
     </section>
-
-    <!-- about section ends -->
-
-    <!-- education section starts  -->
 
     <section class="skills" id="skills">
-      <h1 class="heading">My <span>Skills</span></h1>
-
-      <div class="box-container">
-        <div class="box">
-          <i class="fab fa-html5"></i>
-          <span>HTML</span>
-          <h3>Hypertext Markup Language</h3>
-          <p>
-            a standardized system for tagging text files to achieve font, color,
-            graphic, and hyperlink effects on World Wide Web pages.
-          </p>
-        </div>
-
-        <div class="box">
-          <i class="fab fa-css3-alt"></i>
-          <span>CSS</span>
-          <h3>Cascading Style Sheets</h3>
-          <p>
-            is a stylesheet language used to describe the presentation of a
-            document written in HTML. CSS describes how elements should be
-            rendered on screen, on paper, in speech, or on other media.
-          </p>
-        </div>
-
-        <div class="box">
-          <i class="fab fa-sass"></i>
-          <span>SASS</span>
-          <h3>Syntactically Awesome Style Sheets</h3>
-          <p>
-            CSS with superpowers. Sass is the most mature, stable, and powerful
-            professional grade CSS extension language in the world.
-          </p>
-        </div>
-
-        <div class="box">
-          <i class="fab fa-js-square"></i>
-          <span>JS</span>
-          <h3>JavaScript</h3>
-          <p>
-            is a scripting language that enables you to create dynamically
-            updating content, control multimedia, animate images, and pretty
-            much everything else.
-          </p>
-        </div>
-
-        <div class="box">
-          <div class="icon">
-            <img class="jq-icon" src="img/jquery.png" alt="" />
+      <div class="heading">
+        <p class="josefins">.skills(<span class="blue">'Ability'</span>)</p>
+      </div>
+      <div class="container">
+        <div class="hex-container">
+          <div class="hex-wrapper">
+            <div class="hexagon hex-html" id="hexagon">
+              <i class="fab fa-html5"></i>
+            </div>
+            <div class="hexagon hex-css" id="hexagon2">
+              <i class="fab fa-css3-alt"></i>
+            </div>
+            <div class="hexagon hex-react" id="hexagon3">
+              <i class="fab fa-react"></i>
+            </div>
+            <div class="hexagon hex-js" id="hexagon4">
+              <i class="fab fa-js"></i>
+            </div>
+            <div class="hexagon hex-node" id="hexagon5">
+              <i class="fab fa-node-js"></i>
+            </div>
+            <div class="hexagon hex-wp" id="hexagon6">
+              <i class="fab fa-wordpress"></i>
+            </div>
+            <div class="hexagon hex-sass" id="hexagon7">
+              <i class="fab fa-sass"></i>
+            </div>
           </div>
-          <span>jQuery</span>
-          <h3>jQuery</h3>
-          <p>
-            is a JavaScript library designed to simplify HTML DOM tree traversal
-            and manipulation, as well as event handling, CSS animation, and
-            Ajax.
-          </p>
         </div>
+        <div class="skill-details">
+          <div class="item-details html">
+            <p class="title">HTML</p>
+            <p class="sub">Hypertext Markup Language</p>
+            <p class="desc">
+              a standardized system for tagging text files to achieve font,
+              color, graphic, and hyperlink effects on World Wide Web pages.
+            </p>
+            <p class="exp">
+              Experience:
+              <span>4 Years</span>
+            </p>
+          </div>
 
-        <div class="box">
-          <i class="fab fa-php"></i>
-          <span>PHP</span>
-          <h3>Hypertext Preprocessor</h3>
-          <p>
-            is a widely-used open source general-purpose scripting language that
-            is especially suited for web development and can be embedded into
-            HTML.
-          </p>
-        </div>
+          <div class="item-details css">
+            <p class="title">CSS</p>
+            <p class="sub">Cascading Style Sheets</p>
+            <p class="desc">
+              is a stylesheet language used to describe the presentation of a
+              document written in HTML. CSS describes how elements should be
+              rendered on screen, on paper, in speech, or on other media.
+            </p>
+            <p class="exp">
+              Experience:
+              <span>4 Years</span>
+            </p>
+          </div>
 
-        <div class="box">
-          <i class="fab fa-react"></i>
-          <span>ReactJS</span>
-          <h3>ReactJS</h3>
-          <p>
-            is a free and open-source front-end JavaScript library for building
-            user interfaces based on UI components.
-          </p>
-        </div>
+          <div class="item-details react">
+            <p class="title">ReactJS</p>
+            <p class="sub">React Javascript</p>
+            <p class="desc">
+              is a free and open-source front-end JavaScript library for
+              building user interfaces based on UI components.
+            </p>
+            <p class="exp">
+              Experience:
+              <span>5 Months</span>
+            </p>
+          </div>
 
-        <div class="box">
-          <i class="fab fa-node-js"></i>
-          <span>NodeJS</span>
-          <h3>NodeJS</h3>
-          <p>
-            is an open-source, cross-platform, back-end JavaScript runtime
-            environment that runs on the V8 engine and executes JavaScript code
-            outside a web browser.
-          </p>
+          <div class="item-details js">
+            <p class="title">JS</p>
+            <p class="sub">Javascript</p>
+            <p class="desc">
+              is a scripting language that enables you to create dynamically
+              updating content, control multimedia, animate images, and pretty
+              much everything else.
+            </p>
+            <p class="exp">
+              Experience:
+              <span>2 Years</span>
+            </p>
+          </div>
+
+          <div class="item-details node">
+            <p class="title">NodeJS</p>
+            <p class="sub">Node Javascript</p>
+            <p class="desc">
+              is an open-source, cross-platform, back-end JavaScript runtime
+              environment that runs on the V8 engine and executes JavaScript
+              code outside a web browser.
+            </p>
+            <p class="exp">
+              Experience:
+              <span>5 Months</span>
+            </p>
+          </div>
+
+          <div class="item-details wp">
+            <p class="title">WordPress</p>
+            <p class="sub">WordPress</p>
+            <p class="desc">
+              is a free, open-source website creation platform. On a more
+              technical level, WordPress is a content management system (CMS)
+              written in PHP that uses a MySQL database. In non-geek speak,
+              WordPress is the easiest and most powerful blogging and website
+              builder in existence today.
+            </p>
+            <p class="exp">
+              Experience:
+              <span>2 Years</span>
+            </p>
+          </div>
+
+          <div class="item-details sass">
+            <p class="title">SASS</p>
+            <p class="sub">Syntactically Awesome Style Sheets</p>
+            <p class="desc">
+              CSS with superpowers. Sass is the most mature, stable, and
+              powerful professional grade CSS extension language in the world.
+            </p>
+            <p class="exp">
+              Experience:
+              <span>3 Years</span>
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- education section ends -->
-
-    <!-- portfolio section starts  -->
-
-    <section class="portfolio" id="portfolio">
-      <h1 class="heading">My <span>Projects</span></h1>
-
-      <div class="box-container">
-        <a
-          class="box"
-          href="https://reunirgracias.iot-mansion.jp/"
-          target="_blank"
-        >
-          <img src="img/img1.PNG" alt="" />
-        </a>
-
-        <a class="box" href="http://www.suma-biz.com/" target="_blank">
-          <img src="img/img2.PNG" alt="" />
-        </a>
-
-        <a class="box" href="https://naproject.net/" target="_blank">
-          <img src="img/img3.PNG" alt="" />
-        </a>
-
-        <a
-          class="box"
-          href="http://mystique-group.co.jp/?gclid=CjwKCAiA17P9BRB2EiwAMvwNyIfFT5ZnqlrahI-Kto8BWLge0MR-Or5KlMyyrAExtu8VBgOK1H6AuxoCgLMQAvD_BwE/"
-          target="_blank"
-        >
-          <img src="img/img4.PNG" alt="" />
-        </a>
-
-        <a class="box" href="https://www.morita-auto.co.jp/" target="_blank">
-          <img src="img/img5.PNG" alt="" />
-        </a>
-
-        <a class="box" href="https://www.e-horita.co.jp/" target="_blank">
-          <img src="img/img6.PNG" alt="" />
-        </a>
+    <section class="project" id="portfolio">
+      <div class="heading">
+        <p class="josefins">.project(<span class="blue">'Works'</span>)</p>
       </div>
-    </section>
+      <div class="container">
+        <div class="card">
+            <div class="content">
+                <h2>01</h2>
+                <h3>Reunirgracias</h3>
+                <p class="desc">Reunirgracias is a japanese website that I made around 2019. This website is all about house property e-commerce.
+                </p>
+                <p class="made">MADE WITH : 
+                  <i class="fa-brands fa-html5"></i>
+                  <i class="fa-brands fa-js"></i>
+                  <i class="fa-brands fa-css3-alt"></i>
+                </p>
+                <a href="https://reunirgracias.iot-mansion.jp/" target="_blank">VISIT SITE</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <h2>02</h2>
+                <h3>Suma-biz</h3>
+                <p class="desc">Suma-biz is a japanese website that I finished around 2020. This website is all about cellular network provider.
+                </p>
+                <p class="made">MADE WITH : 
+                  <i class="fa-brands fa-html5"></i>
+                  <i class="fa-brands fa-js"></i>
+                  <i class="fa-brands fa-css3-alt"></i>
+                </p>
+                <a href="http://www.suma-biz.com/" target="_blank">VISIT SITE</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <h2>03</h2>
+                <h3>NA CORP</h3>
+                <p class="desc">NA 'enue' Corp is a japanese website I finished around 2021. This website is about a construction firm website that provides the best services.
+                </p>
+                <p class="made">MADE WITH : 
+                  <i class="fa-brands fa-html5"></i>
+                  <i class="fa-brands fa-js"></i>
+                  <i class="fa-brands fa-css3-alt"></i>
+                </p>
+                <a href="https://naproject.net/" target="_blank">VISIT SITE</a>
+            </div>
+        </div>
 
-    <!-- portfolio section ends -->
+        <div class="card">
+          <div class="content">
+              <h2>04</h2>
+              <h3>MYSTIQUE</h3>
+              <p class="desc">
+                Mystique is a japanese website I finished working on around 2020. It is an online e-commerce website to promote their physical store in japan.
+              </p>
+              <p class="made">MADE WITH : 
+                <i class="fa-brands fa-html5"></i>
+                <i class="fa-brands fa-js"></i>
+                <i class="fa-brands fa-css3-alt"></i>
+              </p>
+              <a href="http://mystique-group.co.jp/?gclid=CjwKCAiA17P9BRB2EiwAMvwNyIfFT5ZnqlrahI-Kto8BWLge0MR-Or5KlMyyrAExtu8VBgOK1H6AuxoCgLMQAvD_BwE/"
+              target="_blank">VISIT SITE</a>
+          </div>
+      </div>
+    </div>
 
-    <!-- contact section starts  -->
 
-    <section class="contact" id="contact">
-      <h1 class="heading"><span>Contact</span> Me</h1>
+    <div class="container two">
+      <div class="card">
+          <div class="content">
+              <h2>01</h2>
+              <h3>Morita-Auto</h3>
+              <p class="desc">Morita-Auto is a japanese website that I made around 2019. This website is all about a car workshop firm.
+              </p>
+              <p class="made">MADE WITH : 
+                <i class="fa-brands fa-html5"></i>
+                <i class="fa-brands fa-js"></i>
+                <i class="fa-brands fa-css3-alt"></i>
+              </p>
+              <a href="https://www.morita-auto.co.jp/" target="_blank">VISIT SITE</a>
+          </div>
+      </div>
+      <div class="card">
+          <div class="content">
+              <h2>02</h2>
+              <h3>Horita</h3>
+              <p class="desc">Horita is a japanese website I finished around 2020. This website is about a fruits shop which provides fresh fruits.
+              </p>
+              <p class="made">MADE WITH : 
+                <i class="fa-brands fa-html5"></i>
+                <i class="fa-brands fa-js"></i>
+                <i class="fa-brands fa-css3-alt"></i>
+              </p>
+              <a href="http://www.suma-biz.com/" target="_blank">VISIT SITE</a>
+          </div>
+      </div>
+      <div class="card">
+          <div class="content">
+              <h2>03</h2>
+              <h3>Horita</h3>
+              <p class="desc">Horita is a japanese website I finished around 2020. This website is about a fruits shop which provides fresh fruits.
+              </p>
+              <p class="made">MADE WITH : 
+                <i class="fa-brands fa-html5"></i>
+                <i class="fa-brands fa-js"></i>
+                <i class="fa-brands fa-css3-alt"></i>
+              </p>
+              <a href="https://www.e-horita.co.jp/" target="_blank">VISIT SITE</a>
+          </div>
+      </div>
 
-      <div class="row">
+      <div class="card">
         <div class="content">
-          <h3 class="title">Contact Information</h3>
-
-          <div class="info">
-            <h3><i class="fas fa-envelope"></i> maruelle08@gmail.com</h3>
-            <h3><i class="fas fa-mobile-alt"></i> +63-917-952-4753</h3>
-            <h3><i class="fas fa-phone"></i> 383-6568</h3>
-            <h3>
-              <i class="fas fa-map-marker-alt"></i> Cadulawan, Minglanilla -
-              6046.
-            </h3>
-          </div>
+            <h2>04</h2>
+            <h3>MYSTIQUE</h3>
+            <p class="desc">
+              Mystique is a japanese website I finished working on around 2020. It is an online e-commerce website to promote their physical store in japan.
+            </p>
+            <p class="made">MADE WITH : 
+              <i class="fa-brands fa-html5"></i>
+              <i class="fa-brands fa-js"></i>
+              <i class="fa-brands fa-css3-alt"></i>
+            </p>
+            <a href="http://mystique-group.co.jp/?gclid=CjwKCAiA17P9BRB2EiwAMvwNyIfFT5ZnqlrahI-Kto8BWLge0MR-Or5KlMyyrAExtu8VBgOK1H6AuxoCgLMQAvD_BwE/"
+            target="_blank">VISIT SITE</a>
         </div>
-
-        <form id="email1" action="">
-          <input type="text" placeholder="Name" class="box" />
-          <input type="text" placeholder="Email" class="box" />
-          <input type="text" placeholder="Project" class="box" />
-          <textarea
-            name=""
-            id="message"
-            cols="30"
-            rows="10"
-            class="box message"
-            placeholder="Messages"
-          ></textarea>
-          <button id="submit" type="submit" class="btn">
-            Submit <i class="fas fa-paper-plane"></i>
-          </button>
-        </form>
-      </div>
+    </div>
+  </div>
     </section>
 
-    <!-- contact section ends -->
-
-    <!-- scroll top button  -->
-
-    <a href="#home" class="top">
-      <img style="width: 50px; height: 110px" src="img/Chino-02.png" alt="" />
-    </a>
-
-    <!-- jquery cdn link  -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-    <!-- custom js file link  -->
-    <script src="js/all.js"></script>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="./js/all.js"></script>
+    <script src="./js/animation.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    
   </body>
 </html>
