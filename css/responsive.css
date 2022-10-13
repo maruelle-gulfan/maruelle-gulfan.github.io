@@ -139,6 +139,12 @@
 
 @media (max-width: 500px) {
 
+  #side-nav.open ul a li {
+    padding-bottom: 1.5rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
   .heading p {
     font-size: 34px;
     color: #fff;
@@ -154,6 +160,10 @@
   }
   .project .container{
     justify-content: center;
+  }
+
+  .skills{
+    height: 980px;
   }
 
   .skills .hex-container{
@@ -252,5 +262,31 @@
   .navbar{
     visibility: hidden;
   }
+
+  #hamburger-menu {
+    visibility: visible;
+    
+  }
+
+  .contact{
+    background: transparent;
+    border: none;
+  }
+
+  .contact-me .container{
+    background-color: #030b0f;
+  }
+
+  .left{
+    visibility: hidden;
+  }
+
+  .right {
+    width: 335px;
+    left: 210px;
+    height: calc(100% + 80px);
+    border: none;
+    border-radius: 20px;
+}
 
 }
