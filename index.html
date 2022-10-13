@@ -32,6 +32,26 @@
     <link rel="stylesheet" href="css/responsive.css" />
     <link rel="icon" href="img/Chino-04.png" sizes="32x32" />
     <title>Maruelle | Portfolio</title>
+
+
+
+
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v15.0'
+        });
+      };
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
   </head>
   <body>
     <header>
@@ -84,6 +104,9 @@
         </ul>
       </nav>
     </header>
+    <!-- Your SDK code -->
+    
+
     <section class="hero" id="home">
       <div class="text">
         <h1>Maruelle<span class="blue">.Gulfan( )</span></h1>
@@ -554,23 +577,7 @@
       chatbox.setAttribute("attribution", "biz_inbox");
     </script>
 
-    <!-- Your SDK code -->
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          xfbml            : true,
-          version          : 'v15.0'
-        });
-      };
-
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-    </script>
+    
 
     <script src="./js/all.js"></script>
     <script src="./js/animation.js"></script>
