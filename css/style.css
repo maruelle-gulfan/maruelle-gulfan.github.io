@@ -5,6 +5,14 @@
   font-family: "Poppins", sans-serif;
 }
 
+:root{
+  --spinner-size: 150px; /* change the size of the spinner */
+  --loading-screen-background: #202842; /* change the background color of the loading screen */
+/* change the font used for the bottom text of the loading screen */
+  --text-color: white; /* change the color used for the bottom text of the loading screen */
+}
+
+
 html::-webkit-scrollbar {
   width: 1rem;
 }
@@ -109,10 +117,12 @@ html::-webkit-scrollbar-thumb {
   transition: all 0.2s ease;
   box-shadow: 2px 4px 5px 0px rgba(0, 0, 0%, 0.5);
   z-index: 3;
+  display: block;
 }
 
 #close.hide {
   right: -150px;
+  display: none;
 }
 
 /* anchors */
@@ -162,7 +172,7 @@ header {
   position: fixed;
   top: 0;
   width: 100vw;
-  z-index: 99999;
+  z-index: 700;
 }
 .user {
   width: 50%;
@@ -861,14 +871,16 @@ header {
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
   background-color: #0f242f;
   border: 5px solid #fff;
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 .right {
   height: 500px;
   width: 350px;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  /*top: 50%;
+  transform: translateY(-50%); */
   border-radius: 20px;
   padding: 20px;
   left: -100px;
@@ -880,6 +892,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  margin-top: 25px
 }
 
 .right_heading {
@@ -892,6 +905,7 @@ header {
 .left {
   position: absolute;
   right: 50px;
+  margin-top: 25px
 }
 
 .headings {
@@ -972,9 +986,9 @@ textarea {
     rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 
-.tabs {
+/* .tabs {
   padding: 30px 20px 0;
-}
+} */
 
 .tab {
   font-size: 20px;
@@ -1003,23 +1017,43 @@ textarea {
   font-size: 35px;
 }
 
+.day-quote{
+  position: fixed;
+  left:10px;
+  bottom: 10px;
+  width: 40px;
+  height: 40px;
+  color: #00b8f5;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #124059;
+}
+
+body{
+  background-color: #030b0f;
+}
+
 @media only screen and (max-width: 950px) {
   .right {
     width: 250px;
-    left: -5px;
+    left: -7px;
     height: calc(100% + 10px);
     border: none;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
+    margin-top: -25px;
   }
 
-  .tabs {
+  /* .tabs {
     padding: 55px 0 0 0;
-  }
+  } */
 
   .tab {
     padding: 20px 10px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     font-size: 18px;
   }
 

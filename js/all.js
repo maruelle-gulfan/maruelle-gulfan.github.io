@@ -43,88 +43,67 @@ function deleting(textIndex, text) {
   }, sPerChar * 1000);
 }
 
-window.onload = function () {
 
-  
+window.addEventListener("scroll", function (e) {
+  if (window.pageYOffset > -1) {
+    document.querySelector(".nav-home").classList.add("current");
+    document.querySelector(".nav-about").classList.remove("current");
+    document.querySelector(".nav-project").classList.remove("current");
+    document.querySelector(".nav-contact").classList.remove("current");
+  }
+  if(window.pageYOffset > 890) {
+    document.querySelector(".nav-about").classList.add("current");
+    document.querySelector(".nav-home").classList.remove("current");
+    document.querySelector(".nav-skill").classList.remove("current");
+    document.querySelector(".nav-project").classList.remove("current");
+    document.querySelector(".nav-contact").classList.remove("current");
+  }
+  if(window.pageYOffset > 1957) {
+    document.querySelector(".nav-skill").classList.add("current");
+    document.querySelector(".nav-home").classList.remove("current");
+    document.querySelector(".nav-about").classList.remove("current");
+    document.querySelector(".nav-project").classList.remove("current");
+    document.querySelector(".nav-contact").classList.remove("current");
+  }
+  if(window.pageYOffset > 2950) {
+    document.querySelector(".nav-project").classList.add("current");
+    document.querySelector(".nav-home").classList.remove("current");
+    document.querySelector(".nav-about").classList.remove("current");
+    document.querySelector(".nav-skill").classList.remove("current");
+    document.querySelector(".nav-contact").classList.remove("current");
+  }
 
+  if(window.pageYOffset > 4100) {
+    document.querySelector(".nav-contact").classList.add("current");
+    document.querySelector(".nav-home").classList.remove("current");
+    document.querySelector(".nav-about").classList.remove("current");
+    document.querySelector(".nav-skill").classList.remove("current");
+    document.querySelector(".nav-project").classList.remove("current");
+  }
 
+  if(window.pageYOffset > 20) {
+    document.querySelector("header").classList.add("change-color");
+  }
+   
+  else {
+    document.querySelector("header").classList.remove("change-color");
+    document.querySelector(".nav-about").classList.remove("current");
+    document.querySelector(".nav-skill").classList.remove("current");
+  }
 
-
-  window.addEventListener("scroll", function (e) {
-    if (window.pageYOffset > -1) {
-      document.querySelector(".nav-home").classList.add("current");
-      document.querySelector(".nav-about").classList.remove("current");
-      document.querySelector(".nav-project").classList.remove("current");
-      document.querySelector(".nav-contact").classList.remove("current");
-    }
-    if(window.pageYOffset > 890) {
-      document.querySelector(".nav-about").classList.add("current");
-      document.querySelector(".nav-home").classList.remove("current");
-      document.querySelector(".nav-skill").classList.remove("current");
-      document.querySelector(".nav-project").classList.remove("current");
-      document.querySelector(".nav-contact").classList.remove("current");
-    }
-    if(window.pageYOffset > 1957) {
-      document.querySelector(".nav-skill").classList.add("current");
-      document.querySelector(".nav-home").classList.remove("current");
-      document.querySelector(".nav-about").classList.remove("current");
-      document.querySelector(".nav-project").classList.remove("current");
-      document.querySelector(".nav-contact").classList.remove("current");
-    }
-    if(window.pageYOffset > 2950) {
-      document.querySelector(".nav-project").classList.add("current");
-      document.querySelector(".nav-home").classList.remove("current");
-      document.querySelector(".nav-about").classList.remove("current");
-      document.querySelector(".nav-skill").classList.remove("current");
-      document.querySelector(".nav-contact").classList.remove("current");
-    }
-
-    if(window.pageYOffset > 4100) {
-      document.querySelector(".nav-contact").classList.add("current");
-      document.querySelector(".nav-home").classList.remove("current");
-      document.querySelector(".nav-about").classList.remove("current");
-      document.querySelector(".nav-skill").classList.remove("current");
-      document.querySelector(".nav-project").classList.remove("current");
-    }
-    if(window.pageYOffset > 20) {
-      document.querySelector("header").classList.add("change-color");
-    }
-     
-    else {
-      document.querySelector("header").classList.remove("change-color");
-      document.querySelector(".nav-about").classList.remove("current");
-      document.querySelector(".nav-skill").classList.remove("current");
-    }
-
-    // const menu_btn = document.querySelector('.hamburger');
-    // const mobile_menu = document.querySelector('.mobile-nav')
-
-    // menu_btn.addEventListener('click', function() {
-    //   menu_btn.classList.toggle('is-active');
-    //   mobile_menu.classList.toggle('is-active');
-    // });
+});
 
 
-    
-    
-  });
+const sideMenu = document.getElementById('side-nav');
+  const close = document.getElementById('close');
+  const menu = document.getElementById('hamburger-menu');
+  const body = document.getElementById('home');
+  const body1 = document.getElementById('about');
+  const body2 = document.getElementById('skills');
+  const body3 = document.getElementById('portfolio');
+  const body4 = document.getElementById('contact');
 
-
-    const sideMenu = document.getElementById('side-nav');
-    const close = document.getElementById('close');
-    const menu = document.getElementById('hamburger-menu');
-    const body = document.getElementById('home');
-    const body1 = document.getElementById('about');
-    const body2 = document.getElementById('skills');
-    const body3 = document.getElementById('portfolio');
-    const body4 = document.getElementById('contact');
-
-
-
-
-
-
-    
+ 
       menu.addEventListener('click',function() {
         sideMenu.classList.add('open');
         close.classList.remove('hide');
@@ -249,6 +228,13 @@ window.onload = function () {
       document.querySelector(".sass").classList.add("skill-active");
     }
   });
+
+window.onload = function () {
+
+  
+
+  
+  
 
 
 

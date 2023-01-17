@@ -54,6 +54,13 @@
     </script>
   </head>
   <body>
+    <div class="loading-screen" id="loading-screen">
+      <div class="spinner-container" style="padding-bottom: 20px;">
+        <img src="./img/profile-me.jpg"/>
+        <div class="spinner"></div>
+      </div>
+      <p>Loading My Portfolio, Please wait...</p>
+    </div>
     <header>
       <div class="user">
         <a href="index.html">
@@ -294,7 +301,7 @@
             </p>
             <p class="exp">
               Experience:
-              <span>4 Years</span>
+              <span>5 Years</span>
             </p>
           </div>
 
@@ -308,7 +315,7 @@
             </p>
             <p class="exp">
               Experience:
-              <span>4 Years</span>
+              <span>5 Years</span>
             </p>
           </div>
 
@@ -321,7 +328,7 @@
             </p>
             <p class="exp">
               Experience:
-              <span>5 Months</span>
+              <span>1 Year</span>
             </p>
           </div>
 
@@ -335,7 +342,7 @@
             </p>
             <p class="exp">
               Experience:
-              <span>2 Years</span>
+              <span>4 Years</span>
             </p>
           </div>
 
@@ -349,7 +356,7 @@
             </p>
             <p class="exp">
               Experience:
-              <span>5 Months</span>
+              <span>1 Year</span>
             </p>
           </div>
 
@@ -365,7 +372,7 @@
             </p>
             <p class="exp">
               Experience:
-              <span>2 Years</span>
+              <span>4 Years</span>
             </p>
           </div>
 
@@ -378,7 +385,7 @@
             </p>
             <p class="exp">
               Experience:
-              <span>3 Years</span>
+              <span>4 Years</span>
             </p>
           </div>
         </div>
@@ -564,6 +571,43 @@
       </div>
     </section>
 
+
+    <section class="modal hidden">
+      <div class="wrapper">
+        <button class="btn-close">⨉</button>
+        <div class="quote-title">Quote of the Day</div>
+        <div class="content">
+          <div class="quote-area">
+            <i class="fas fa-quote-left"></i>
+            <p class="q-quote">Nothing ever goes away until it has taught us what we need to know.</p>
+            <i class="fas fa-quote-right"></i>
+          </div>
+          <div class="author">
+            <span>__</span>
+            <span class="q-name">Pema Chödrön</span>
+          </div>
+        </div>
+        <div class="buttons">
+          <div class="features">
+            <ul>
+              <li class="speech"><i class="fas fa-volume-up"></i></li>
+              <li class="copy"><i class="fas fa-copy"></i></li>
+              <li class="twitter"><i class="fab fa-twitter"></i></li>
+            </ul>
+            <button id="newQuote">New Quote</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="overlay hidden"></div>
+    <button class=" btn-open">
+    <div class="day-quote">
+      <i class="fa-sharp fa-solid fa-quote-right"></i>
+      
+    </div>
+    </button>
+
     <!-- Messenger Chat Plugin Code -->
     <div id="fb-root"></div>
 
@@ -584,4 +628,74 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     
   </body>
+
+  <script>
+    function closeLoadingScreen(loadingScreen) {
+    loadingScreen.style.transitionDuration = ".5s";
+    loadingScreen.style.transitionTimingFunction = "cubic-bezier(0,.75,.25,1)";
+    loadingScreen.style.opacity = 0;
+    loadingScreen.style.borderRadius = "40px";
+    loadingScreen.style.transform = "scale(0.75)";
+    loadingScreen.style.cursor = "initial";
+    setTimeout(() => {
+      loadingScreen.parentNode.removeChild(loadingScreen);
+    }, 500)
+  }
+  
+  document.body.onload = ()=>{
+    lscreen = document.getElementById("loading-screen");
+    
+    // load any data and call the function "closeLoadingScreen(lscreen)"
+  
+    setTimeout(()=>{closeLoadingScreen(lscreen)}, 2000); // FOR DEMO
+  }
+
+
+
+
+  const quoteText = document.querySelector(".q-quote"),
+  quoteBtn = document.getElementById("newQuote"),
+  authorName = document.querySelector(".q-name"),
+  speechBtn = document.querySelector(".speech"),
+  copyBtn = document.querySelector(".copy"),
+  twitterBtn = document.querySelector(".twitter"),
+  synth = speechSynthesis;
+
+async function randomQuote() {
+  quoteBtn.classList.add("loading");
+  quoteBtn.innerText = "Loading...";
+  const response = await fetch("https://api.quotable.io/random");
+  const data = await response.json();
+  if (response.ok) {
+    quoteText.innerText = data.content;
+    authorName.innerText = data.author;
+  } else {
+    alert("An error occured");
+    console.log(data);
+  }
+  quoteBtn.classList.remove("loading");
+  quoteBtn.innerText = "New Quote";
+}
+
+speechBtn.addEventListener("click", () => {
+  let utterance = new SpeechSynthesisUtterance(
+    `${quoteText.innerText} by ${authorName.innerText}`
+  );
+  synth.speak(utterance);
+});
+
+copyBtn.addEventListener("click", () => {
+  navigator.clipboard.writeText(quoteText.innerText);
+});
+
+twitterBtn.addEventListener("click", () => {
+  let tweetUrl = `https://twitter.com/intent/tweet?url=${quoteText.innerText}`;
+  window.open(tweetUrl, "_top");
+});
+
+quoteBtn.addEventListener("click", randomQuote);
+
+
+   
+  </script>
 </html>
