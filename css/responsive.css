@@ -22,6 +22,11 @@
     width: 100%;
   }
 
+  .about .container .info .introduction span {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
   .about .container .picture {
     text-align: center;
   }

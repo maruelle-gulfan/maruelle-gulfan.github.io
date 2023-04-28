@@ -151,6 +151,14 @@ a {
 .blue {
   color: #00b8f5;
 }
+.red{
+  color: #FF0000;
+}
+
+.current-work{
+  height: 16px;
+  padding-top: 2px;
+}
 
 /* Change Background */
 .change-color {
