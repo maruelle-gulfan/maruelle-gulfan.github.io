@@ -12,6 +12,10 @@
   --text-color: white; /* change the color used for the bottom text of the loading screen */
 }
 
+nav ul a:hover{
+  color: #00b8f5 !important;
+}
+
 
 html::-webkit-scrollbar {
   width: 1rem;

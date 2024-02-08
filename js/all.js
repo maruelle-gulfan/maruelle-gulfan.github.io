@@ -94,6 +94,38 @@ window.addEventListener("scroll", function (e) {
 });
 
 
+function calculateAge(date) {
+  //split() splits a string into an array of substrings, and returns the array:
+  let ageArray = date.split("/");
+  //The parseInt method parses a value as a string and returns an integer.
+  let ageDay = parseInt(ageArray[0], 10);
+  let ageMonth = parseInt(ageArray[1], 10);
+  let ageYear = parseInt(ageArray[2], 10);
+  // Create a Date object for the birth date
+const agePerson = new Date(ageYear, ageMonth - 1, ageDay);
+  // Calculate the difference in milliseconds between the birth date and current date
+const ageInMs = Date.now() - agePerson.getTime();
+  // Convert the age from milliseconds to years
+const ageInYears = ageInMs / (1000 * 60 * 60 * 24 * 365.25);
+  // Round down to the nearest integer
+  const age = Math.floor(ageInYears);
+  return age;
+}
+const presentAge = (calculateAge("14/02/1995"));
+const htmlCss = (calculateAge("01/01/2018"));
+const JavaScript = (calculateAge("01/01/2019"));
+const JsLibrary = (calculateAge("01/01/2022"));
+
+
+document.querySelector('.myInfoAge').innerHTML += presentAge;
+document.querySelector('.htmlCss').innerHTML += htmlCss +' Years';
+document.querySelector('.InfoCss').innerHTML += htmlCss +' Years';
+document.querySelector('.InfoJs').innerHTML += JavaScript +' Years';
+document.querySelector('.InfoSass').innerHTML += JavaScript +' Years';
+document.querySelector('.InfoWP').innerHTML += JavaScript +' Years';
+document.querySelector('.InfoRJS').innerHTML += JsLibrary +' Years';
+document.querySelector('.InfoNJS').innerHTML += JsLibrary +' Years';
+
 const sideMenu = document.getElementById('side-nav');
   const close = document.getElementById('close');
   const menu = document.getElementById('hamburger-menu');
@@ -152,8 +184,20 @@ const sideMenu = document.getElementById('side-nav');
       document.querySelector(".node").classList.remove("skill-active");
       document.querySelector(".wp").classList.remove("skill-active");
       document.querySelector(".sass").classList.remove("skill-active");
+      
+      // animation remove slide in
+      document.querySelector(".ttl-css").classList.remove("sir-1");
+      document.querySelector(".sub-css").classList.remove("sir-2");
+      document.querySelector(".dsc-css").classList.remove("sir-2");
+      document.querySelector(".exp-css").classList.remove("sir-3");
 
+      // animation add slide in
       document.querySelector(".html").classList.add("skill-active");
+      document.querySelector(".ttl-html").classList.add("sir-1");
+      document.querySelector(".sub-html").classList.add("sir-2");
+      document.querySelector(".dsc-html").classList.add("sir-2");
+      document.querySelector(".exp-html").classList.add("sir-3");
+
     }
   });
   document.getElementById("hexagon2").addEventListener("click", function () {
@@ -164,8 +208,20 @@ const sideMenu = document.getElementById('side-nav');
       document.querySelector(".node").classList.remove("skill-active");
       document.querySelector(".wp").classList.remove("skill-active");
       document.querySelector(".sass").classList.remove("skill-active");
+      
+      // animation remove slide in
+      document.querySelector(".ttl-html").classList.remove("sir-1");
+      document.querySelector(".sub-html").classList.remove("sir-2");
+      document.querySelector(".dsc-html").classList.remove("sir-2");
+      document.querySelector(".exp-html").classList.remove("sir-3");
 
+      // animation add slide in
       document.querySelector(".css").classList.add("skill-active");
+      document.querySelector(".ttl-css").classList.add("sir-1");
+      document.querySelector(".sub-css").classList.add("sir-2");
+      document.querySelector(".dsc-css").classList.add("sir-2");
+      document.querySelector(".exp-css").classList.add("sir-3");
+    
     }
   });
   document.getElementById("hexagon3").addEventListener("click", function () {
