@@ -355,7 +355,7 @@ header {
 .about .container .info,
 .about .container .picture {
   width: 50%;
-  padding-bottom: 150px;
+  padding-bottom: 150px;  
 }
 
 .about .container .info .social-wrapper {
@@ -754,14 +754,28 @@ header {
   background-position: -100px 0px;
 }
 
-.project .two .card:nth-child(1){
+.project .container .card:nth-child(5){
   background-image: url('../img/img5.PNG');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: -50px 0px;
 }
 
-.project .two .card:nth-child(2){
+.project .container .card:nth-child(6){
+  background-image: url('../img/img6.PNG');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: -10px 0px;
+}
+
+.project .container .card:nth-child(7){
+  background-image: url('../img/img7.PNG');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: -270px 0px;
+}
+
+.project .container .card:nth-child(8){
   background-image: url('../img/img6.PNG');
   background-size: cover;
   background-repeat: no-repeat;

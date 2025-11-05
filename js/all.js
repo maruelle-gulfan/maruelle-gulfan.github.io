@@ -51,21 +51,21 @@ window.addEventListener("scroll", function (e) {
     document.querySelector(".nav-project").classList.remove("current");
     document.querySelector(".nav-contact").classList.remove("current");
   }
-  if(window.pageYOffset > 890) {
+  if(window.pageYOffset > 870) {
     document.querySelector(".nav-about").classList.add("current");
     document.querySelector(".nav-home").classList.remove("current");
     document.querySelector(".nav-skill").classList.remove("current");
     document.querySelector(".nav-project").classList.remove("current");
     document.querySelector(".nav-contact").classList.remove("current");
   }
-  if(window.pageYOffset > 1957) {
+  if(window.pageYOffset > 1857) {
     document.querySelector(".nav-skill").classList.add("current");
     document.querySelector(".nav-home").classList.remove("current");
     document.querySelector(".nav-about").classList.remove("current");
     document.querySelector(".nav-project").classList.remove("current");
     document.querySelector(".nav-contact").classList.remove("current");
   }
-  if(window.pageYOffset > 2950) {
+  if(window.pageYOffset > 2850) {
     document.querySelector(".nav-project").classList.add("current");
     document.querySelector(".nav-home").classList.remove("current");
     document.querySelector(".nav-about").classList.remove("current");
@@ -73,7 +73,7 @@ window.addEventListener("scroll", function (e) {
     document.querySelector(".nav-contact").classList.remove("current");
   }
 
-  if(window.pageYOffset > 4100) {
+  if(window.pageYOffset > 4000) {
     document.querySelector(".nav-contact").classList.add("current");
     document.querySelector(".nav-home").classList.remove("current");
     document.querySelector(".nav-about").classList.remove("current");
@@ -190,6 +190,26 @@ const sideMenu = document.getElementById('side-nav');
       document.querySelector(".sub-css").classList.remove("sir-2");
       document.querySelector(".dsc-css").classList.remove("sir-2");
       document.querySelector(".exp-css").classList.remove("sir-3");
+      document.querySelector(".ttl-react").classList.remove("sir-1");
+      document.querySelector(".sub-react").classList.remove("sir-2");
+      document.querySelector(".dsc-react").classList.remove("sir-2");
+      document.querySelector(".exp-react").classList.remove("sir-3");
+      document.querySelector(".ttl-js").classList.remove("sir-1");
+      document.querySelector(".sub-js").classList.remove("sir-2");
+      document.querySelector(".dsc-js").classList.remove("sir-2");
+      document.querySelector(".exp-js").classList.remove("sir-3");
+      document.querySelector(".ttl-node").classList.remove("sir-1");
+      document.querySelector(".sub-node").classList.remove("sir-2");
+      document.querySelector(".dsc-node").classList.remove("sir-2");
+      document.querySelector(".exp-node").classList.remove("sir-3");
+      document.querySelector(".ttl-wp").classList.remove("sir-1");
+      document.querySelector(".sub-wp").classList.remove("sir-2");
+      document.querySelector(".dsc-wp").classList.remove("sir-2");
+      document.querySelector(".exp-wp").classList.remove("sir-3");
+      document.querySelector(".ttl-sass").classList.remove("sir-1");
+      document.querySelector(".sub-sass").classList.remove("sir-2");
+      document.querySelector(".dsc-sass").classList.remove("sir-2");
+      document.querySelector(".exp-sass").classList.remove("sir-3");
 
       // animation add slide in
       document.querySelector(".html").classList.add("skill-active");
@@ -214,6 +234,26 @@ const sideMenu = document.getElementById('side-nav');
       document.querySelector(".sub-html").classList.remove("sir-2");
       document.querySelector(".dsc-html").classList.remove("sir-2");
       document.querySelector(".exp-html").classList.remove("sir-3");
+      document.querySelector(".ttl-react").classList.remove("sir-1");
+      document.querySelector(".sub-react").classList.remove("sir-2");
+      document.querySelector(".dsc-react").classList.remove("sir-2");
+      document.querySelector(".exp-react").classList.remove("sir-3");
+      document.querySelector(".ttl-js").classList.remove("sir-1");
+      document.querySelector(".sub-js").classList.remove("sir-2");
+      document.querySelector(".dsc-js").classList.remove("sir-2");
+      document.querySelector(".exp-js").classList.remove("sir-3");
+      document.querySelector(".ttl-node").classList.remove("sir-1");
+      document.querySelector(".sub-node").classList.remove("sir-2");
+      document.querySelector(".dsc-node").classList.remove("sir-2");
+      document.querySelector(".exp-node").classList.remove("sir-3");
+      document.querySelector(".ttl-wp").classList.remove("sir-1");
+      document.querySelector(".sub-wp").classList.remove("sir-2");
+      document.querySelector(".dsc-wp").classList.remove("sir-2");
+      document.querySelector(".exp-wp").classList.remove("sir-3");
+      document.querySelector(".ttl-sass").classList.remove("sir-1");
+      document.querySelector(".sub-sass").classList.remove("sir-2");
+      document.querySelector(".dsc-sass").classList.remove("sir-2");
+      document.querySelector(".exp-sass").classList.remove("sir-3");
 
       // animation add slide in
       document.querySelector(".css").classList.add("skill-active");
@@ -233,7 +273,38 @@ const sideMenu = document.getElementById('side-nav');
       document.querySelector(".wp").classList.remove("skill-active");
       document.querySelector(".sass").classList.remove("skill-active");
 
+      // animation remove slide in
+      document.querySelector(".ttl-html").classList.remove("sir-1");
+      document.querySelector(".sub-html").classList.remove("sir-2");
+      document.querySelector(".dsc-html").classList.remove("sir-2");
+      document.querySelector(".exp-html").classList.remove("sir-3");
+      document.querySelector(".ttl-css").classList.remove("sir-1");
+      document.querySelector(".sub-css").classList.remove("sir-2");
+      document.querySelector(".dsc-css").classList.remove("sir-2");
+      document.querySelector(".exp-css").classList.remove("sir-3");
+      document.querySelector(".ttl-js").classList.remove("sir-1");
+      document.querySelector(".sub-js").classList.remove("sir-2");
+      document.querySelector(".dsc-js").classList.remove("sir-2");
+      document.querySelector(".exp-js").classList.remove("sir-3");
+      document.querySelector(".ttl-node").classList.remove("sir-1");
+      document.querySelector(".sub-node").classList.remove("sir-2");
+      document.querySelector(".dsc-node").classList.remove("sir-2");
+      document.querySelector(".exp-node").classList.remove("sir-3");
+      document.querySelector(".ttl-wp").classList.remove("sir-1");
+      document.querySelector(".sub-wp").classList.remove("sir-2");
+      document.querySelector(".dsc-wp").classList.remove("sir-2");
+      document.querySelector(".exp-wp").classList.remove("sir-3");
+      document.querySelector(".ttl-sass").classList.remove("sir-1");
+      document.querySelector(".sub-sass").classList.remove("sir-2");
+      document.querySelector(".dsc-sass").classList.remove("sir-2");
+      document.querySelector(".exp-sass").classList.remove("sir-3");
+
       document.querySelector(".react").classList.add("skill-active");
+      // animation add slide in
+      document.querySelector(".ttl-react").classList.add("sir-1");
+      document.querySelector(".sub-react").classList.add("sir-2");
+      document.querySelector(".dsc-react").classList.add("sir-2");
+      document.querySelector(".exp-react").classList.add("sir-3");
     }
   });
   document.getElementById("hexagon4").addEventListener("click", function () {
@@ -246,6 +317,36 @@ const sideMenu = document.getElementById('side-nav');
       document.querySelector(".sass").classList.remove("skill-active");
 
       document.querySelector(".js").classList.add("skill-active");
+      // animation remove slide in
+      document.querySelector(".ttl-html").classList.remove("sir-1");
+      document.querySelector(".sub-html").classList.remove("sir-2");
+      document.querySelector(".dsc-html").classList.remove("sir-2");
+      document.querySelector(".exp-html").classList.remove("sir-3");
+      document.querySelector(".ttl-css").classList.remove("sir-1");
+      document.querySelector(".sub-css").classList.remove("sir-2");
+      document.querySelector(".dsc-css").classList.remove("sir-2");
+      document.querySelector(".exp-css").classList.remove("sir-3");
+      document.querySelector(".ttl-react").classList.remove("sir-1");
+      document.querySelector(".sub-react").classList.remove("sir-2");
+      document.querySelector(".dsc-react").classList.remove("sir-2");
+      document.querySelector(".exp-react").classList.remove("sir-3");
+      document.querySelector(".ttl-node").classList.remove("sir-1");
+      document.querySelector(".sub-node").classList.remove("sir-2");
+      document.querySelector(".dsc-node").classList.remove("sir-2");
+      document.querySelector(".exp-node").classList.remove("sir-3");
+      document.querySelector(".ttl-wp").classList.remove("sir-1");
+      document.querySelector(".sub-wp").classList.remove("sir-2");
+      document.querySelector(".dsc-wp").classList.remove("sir-2");
+      document.querySelector(".exp-wp").classList.remove("sir-3");
+      document.querySelector(".ttl-sass").classList.remove("sir-1");
+      document.querySelector(".sub-sass").classList.remove("sir-2");
+      document.querySelector(".dsc-sass").classList.remove("sir-2");
+      document.querySelector(".exp-sass").classList.remove("sir-3");
+      // animation add slide in
+      document.querySelector(".ttl-js").classList.add("sir-1");
+      document.querySelector(".sub-js").classList.add("sir-2");
+      document.querySelector(".dsc-js").classList.add("sir-2");
+      document.querySelector(".exp-js").classList.add("sir-3");
     }
   });
   document.getElementById("hexagon5").addEventListener("click", function () {
@@ -258,6 +359,36 @@ const sideMenu = document.getElementById('side-nav');
       document.querySelector(".sass").classList.remove("skill-active");
 
       document.querySelector(".node").classList.add("skill-active");
+      // animation remove slide in
+      document.querySelector(".ttl-html").classList.remove("sir-1");
+      document.querySelector(".sub-html").classList.remove("sir-2");
+      document.querySelector(".dsc-html").classList.remove("sir-2");
+      document.querySelector(".exp-html").classList.remove("sir-3");
+      document.querySelector(".ttl-css").classList.remove("sir-1");
+      document.querySelector(".sub-css").classList.remove("sir-2");
+      document.querySelector(".dsc-css").classList.remove("sir-2");
+      document.querySelector(".exp-css").classList.remove("sir-3");
+      document.querySelector(".ttl-react").classList.remove("sir-1");
+      document.querySelector(".sub-react").classList.remove("sir-2");
+      document.querySelector(".dsc-react").classList.remove("sir-2");
+      document.querySelector(".exp-react").classList.remove("sir-3");
+      document.querySelector(".ttl-js").classList.remove("sir-1");
+      document.querySelector(".sub-js").classList.remove("sir-2");
+      document.querySelector(".dsc-js").classList.remove("sir-2");
+      document.querySelector(".exp-js").classList.remove("sir-3");
+      document.querySelector(".ttl-wp").classList.remove("sir-1");
+      document.querySelector(".sub-wp").classList.remove("sir-2");
+      document.querySelector(".dsc-wp").classList.remove("sir-2");
+      document.querySelector(".exp-wp").classList.remove("sir-3");
+      document.querySelector(".ttl-sass").classList.remove("sir-1");
+      document.querySelector(".sub-sass").classList.remove("sir-2");
+      document.querySelector(".dsc-sass").classList.remove("sir-2");
+      document.querySelector(".exp-sass").classList.remove("sir-3");
+      // animation add slide in
+      document.querySelector(".ttl-node").classList.add("sir-1");
+      document.querySelector(".sub-node").classList.add("sir-2");
+      document.querySelector(".dsc-node").classList.add("sir-2");
+      document.querySelector(".exp-node").classList.add("sir-3");
     }
   });
   document.getElementById("hexagon6").addEventListener("click", function () {
@@ -270,6 +401,36 @@ const sideMenu = document.getElementById('side-nav');
       document.querySelector(".sass").classList.remove("skill-active");
 
       document.querySelector(".wp").classList.add("skill-active");
+      // animation remove slide in
+      document.querySelector(".ttl-html").classList.remove("sir-1");
+      document.querySelector(".sub-html").classList.remove("sir-2");
+      document.querySelector(".dsc-html").classList.remove("sir-2");
+      document.querySelector(".exp-html").classList.remove("sir-3");
+      document.querySelector(".ttl-css").classList.remove("sir-1");
+      document.querySelector(".sub-css").classList.remove("sir-2");
+      document.querySelector(".dsc-css").classList.remove("sir-2");
+      document.querySelector(".exp-css").classList.remove("sir-3");
+      document.querySelector(".ttl-react").classList.remove("sir-1");
+      document.querySelector(".sub-react").classList.remove("sir-2");
+      document.querySelector(".dsc-react").classList.remove("sir-2");
+      document.querySelector(".exp-react").classList.remove("sir-3");
+      document.querySelector(".ttl-js").classList.remove("sir-1");
+      document.querySelector(".sub-js").classList.remove("sir-2");
+      document.querySelector(".dsc-js").classList.remove("sir-2");
+      document.querySelector(".exp-js").classList.remove("sir-3");
+      document.querySelector(".ttl-node").classList.remove("sir-1");
+      document.querySelector(".sub-node").classList.remove("sir-2");
+      document.querySelector(".dsc-node").classList.remove("sir-2");
+      document.querySelector(".exp-node").classList.remove("sir-3");
+      document.querySelector(".ttl-sass").classList.remove("sir-1");
+      document.querySelector(".sub-sass").classList.remove("sir-2");
+      document.querySelector(".dsc-sass").classList.remove("sir-2");
+      document.querySelector(".exp-sass").classList.remove("sir-3");
+      // animation add slide in
+      document.querySelector(".ttl-wp").classList.add("sir-1");
+      document.querySelector(".sub-wp").classList.add("sir-2");
+      document.querySelector(".dsc-wp").classList.add("sir-2");
+      document.querySelector(".exp-wp").classList.add("sir-3");
     }
   });
   document.getElementById("hexagon7").addEventListener("click", function () {
@@ -282,6 +443,36 @@ const sideMenu = document.getElementById('side-nav');
       document.querySelector(".html").classList.remove("skill-active");
 
       document.querySelector(".sass").classList.add("skill-active");
+      // animation remove slide in
+      document.querySelector(".ttl-html").classList.remove("sir-1");
+      document.querySelector(".sub-html").classList.remove("sir-2");
+      document.querySelector(".dsc-html").classList.remove("sir-2");
+      document.querySelector(".exp-html").classList.remove("sir-3");
+      document.querySelector(".ttl-css").classList.remove("sir-1");
+      document.querySelector(".sub-css").classList.remove("sir-2");
+      document.querySelector(".dsc-css").classList.remove("sir-2");
+      document.querySelector(".exp-css").classList.remove("sir-3");
+      document.querySelector(".ttl-react").classList.remove("sir-1");
+      document.querySelector(".sub-react").classList.remove("sir-2");
+      document.querySelector(".dsc-react").classList.remove("sir-2");
+      document.querySelector(".exp-react").classList.remove("sir-3");
+      document.querySelector(".ttl-js").classList.remove("sir-1");
+      document.querySelector(".sub-js").classList.remove("sir-2");
+      document.querySelector(".dsc-js").classList.remove("sir-2");
+      document.querySelector(".exp-js").classList.remove("sir-3");
+      document.querySelector(".ttl-node").classList.remove("sir-1");
+      document.querySelector(".sub-node").classList.remove("sir-2");
+      document.querySelector(".dsc-node").classList.remove("sir-2");
+      document.querySelector(".exp-node").classList.remove("sir-3");
+      document.querySelector(".ttl-wp").classList.remove("sir-1");
+      document.querySelector(".sub-wp").classList.remove("sir-2");
+      document.querySelector(".dsc-wp").classList.remove("sir-2");
+      document.querySelector(".exp-wp").classList.remove("sir-3");
+      // animation add slide in
+      document.querySelector(".ttl-sass").classList.add("sir-1");
+      document.querySelector(".sub-sass").classList.add("sir-2");
+      document.querySelector(".dsc-sass").classList.add("sir-2");
+      document.querySelector(".exp-sass").classList.add("sir-3");
     }
   });
 

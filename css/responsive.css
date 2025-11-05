@@ -300,6 +300,20 @@
     position: absolute;
     top: 85px;
 }
+
+.project .container {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  .project .container .card {
+    width: 200px;
+    height: 300px;
+  }
+
+.project .container{
+    justify-content: space-between;
+  }
+
 }
 
 /* PHONE RESPONSIVE */
