@@ -127,7 +127,7 @@
         </p>
         <p class="resume">
           <span class="blue">`${</span>
-          <a href="pdf/Maruelle-CV.pdf" target="_blank">
+          <a href="pdf/Maruelle-Gulfan-CV.pdf" target="_blank">
             Resumé <i class="fas fa-folder-open"></i
           ></a>
           <span class="blue">}`</span>
@@ -149,7 +149,7 @@
     <section id="about" class="about">
       <div class="heading">
         <p class="josefins">
-          .about(<span class="blue">'Maruelle Gulfan'</span>)
+          about(<span class="blue">'Maruelle Gulfan'</span>)
         </p>
       </div>
       <p class="comment inform">/* Personal Information */</p>
@@ -186,59 +186,59 @@
 
             <p class="comment">//About Me</p>
             <p class="myself">
-              const Name = <span class="blue">(</span>
+              const Name = <span class="blue">'</span>
               <span class="myInfo">Maruelle Gulfan</span>
-              <span class="blue">)</span>
+              <span class="blue">'</span>
             </p>
 
             <p class="myself">
-              const Nickname = <span class="blue">(</span>
+              const Nickname = <span class="blue">'</span>
               <span class="myInfo">Chino</span>
-              <span class="blue">)</span>
+              <span class="blue">'</span>
             </p>
 
             <p class="myself">
-              const Occupation = <span class="blue">(</span>
+              const Occupation = <span class="blue">'</span>
               <span class="myInfo">Software Development Assistant Manager</span>
-              <span class="blue">)</span>
+              <span class="blue">'</span>
             </p>
 
             <p class="myself">
-              const Birthday = <span class="blue">(</span>
+              const Birthday = <span class="blue">'</span>
               <span class="myInfo">February 14, 1995</span>
-              <span class="blue">)</span>
+              <span class="blue">'</span>
             </p>
 
             <p class="myself">
-              const Age = <span class="blue">(</span>
+              const Age = <span class="blue">'</span>
               <span class="myInfoAge"></span>
-              <span class="blue">)</span>
+              <span class="blue">'</span>
             </p>
 
             <p class="myself">
-              const Nationality = <span class="blue">(</span>
+              const Nationality = <span class="blue">'</span>
               <span class="myInfo">Filipino</span>
-              <span class="blue">)</span>
+              <span class="blue">'</span>
             </p>
 
             <p class="myself">
-              const Address = <span class="blue">(</span>
+              const Address = <span class="blue">'</span>
               <span style="font-size: 16px" class="myInfo"
                 >Minglanilla, Cebu</span
               >
-              <span class="blue">)</span>
+              <span class="blue">'</span>
             </p>
 
             <p class="myself">
-              const Phone = <span class="blue">(</span>
+              const Phone = <span class="blue">'</span>
               <span class="myInfo">09179524753</span>
-              <span class="blue">)</span>
+              <span class="blue">'</span>
             </p>
 
             <p class="myself">
-              const Email = <span class="blue">(</span>
+              const Email = <span class="blue">'</span>
               <span class="myInfo">maruelle08@gmail.com</span>
-              <span class="blue">)</span>
+              <span class="blue">'</span>
             </p>
           </div>
 
@@ -268,7 +268,7 @@
 
     <section class="skills" id="skills">
       <div class="heading">
-        <p class="josefins">.skills(<span class="blue">'Ability'</span>)</p>
+        <p class="josefins">skills(<span class="blue">'Ability'</span>)</p>
       </div>
       <div class="container">
         <div class="hex-container">
@@ -399,7 +399,7 @@
 
     <section class="project" id="portfolio">
       <div class="heading">
-        <p class="josefins">.project(<span class="blue">'Works'</span>)</p>
+        <p class="josefins">project(<span class="blue">'Works'</span>)</p>
       </div>
       <div class="container">
         <div class="card">
@@ -530,7 +530,7 @@
 
     <section class="contact-me" id="contact">
       <div class="heading" style="margin-bottom: 0; padding-bottom:0;">
-        <p class="josefins">.contact(<span class="blue">'Business'</span>)</p>
+        <p class="josefins">contact(<span class="blue">'Business'</span>)</p>
       </div>
       <div class="container">
         <div class="contact">
@@ -658,7 +658,7 @@
 
 
 
-  const quoteText = document.querySelector(".q-quote"),
+  // const quoteText = document.querySelector(".q-quote"),
   quoteBtn = document.getElementById("newQuote"),
   authorName = document.querySelector(".q-name"),
   speechBtn = document.querySelector(".speech"),
@@ -666,21 +666,203 @@
   twitterBtn = document.querySelector(".twitter"),
   synth = speechSynthesis;
 
-async function randomQuote() {
-  quoteBtn.classList.add("loading");
-  quoteBtn.innerText = "Loading...";
-  const response = await fetch("https://api.quotable.io/random");
-  const data = await response.json();
-  if (response.ok) {
-    quoteText.innerText = data.content;
-    authorName.innerText = data.author;
-  } else {
-    alert("An error occured");
-    console.log(data);
+// Dummy quote list
+const quotes = [
+  { content: "The best way to predict the future is to invent it.", author: "Alan Kay" },
+  { content: "Stay hungry, stay foolish.", author: "Steve Jobs" },
+  { content: "Life is what happens when you're busy making other plans.", author: "John Lennon" },
+  { content: "Do what you can, with what you have, where you are.", author: "Theodore Roosevelt" },
+  { content: "In the middle of every difficulty lies opportunity.", author: "Albert Einstein" },
+  { content: "Happiness depends upon ourselves.", author: "Aristotle" },
+  { content: "It always seems impossible until it's done.", author: "Nelson Mandela" },
+  { content: "Success is not final, failure is not fatal: it is the courage to continue that counts.", author: "Winston Churchill" },
+  { content: "You miss 100% of the shots you don't take.", author: "Wayne Gretzky" },
+  { content: "Believe you can and you're halfway there.", author: "Theodore Roosevelt" },
+  { content: "The purpose of our lives is to be happy.", author: "Dalai Lama" },
+  { content: "Turn your wounds into wisdom.", author: "Oprah Winfrey" },
+  { content: "Everything you can imagine is real.", author: "Pablo Picasso" },
+  { content: "Act as if what you do makes a difference. It does.", author: "William James" },
+  { content: "Don't watch the clock; do what it does. Keep going.", author: "Sam Levenson" },
+  { content: "Keep your face always toward the sunshine—and shadows will fall behind you.", author: "Walt Whitman" },
+  { content: "You must be the change you wish to see in the world.", author: "Mahatma Gandhi" },
+  { content: "Dream big and dare to fail.", author: "Norman Vaughan" },
+  { content: "The harder you work for something, the greater you'll feel when you achieve it.", author: "Unknown" },
+  { content: "What we think, we become.", author: "Buddha" },
+  { content: "The secret of getting ahead is getting started.", author: "Mark Twain" },
+  { content: "Don't let yesterday take up too much of today.", author: "Will Rogers" },
+  { content: "Failure is simply the opportunity to begin again, this time more intelligently.", author: "Henry Ford" },
+  { content: "If you want to lift yourself up, lift up someone else.", author: "Booker T. Washington" },
+  { content: "Limit your 'always' and your 'nevers'.", author: "Amy Poehler" },
+  { content: "Doubt kills more dreams than failure ever will.", author: "Suzy Kassem" },
+  { content: "You are never too old to set another goal or to dream a new dream.", author: "C.S. Lewis" },
+  { content: "The future belongs to those who believe in the beauty of their dreams.", author: "Eleanor Roosevelt" },
+  { content: "Everything has beauty, but not everyone sees it.", author: "Confucius" },
+  { content: "Keep going. Everything you need will come to you at the perfect time.", author: "Unknown" },
+  { content: "Your only limit is your mind.", author: "Unknown" },
+  { content: "Push yourself, because no one else is going to do it for you.", author: "Unknown" },
+  { content: "Sometimes later becomes never. Do it now.", author: "Unknown" },
+  { content: "Great things never come from comfort zones.", author: "Unknown" },
+  { content: "Dream it. Wish it. Do it.", author: "Unknown" },
+  { content: "Success doesn't just find you. You have to go out and get it.", author: "Unknown" },
+  { content: "The harder you work, the luckier you get.", author: "Gary Player" },
+  { content: "Don't stop when you're tired. Stop when you're done.", author: "Unknown" },
+  { content: "Wake up with determination. Go to bed with satisfaction.", author: "Unknown" },
+  { content: "Little things make big days.", author: "Unknown" },
+  { content: "It's going to be hard, but hard does not mean impossible.", author: "Unknown" },
+  { content: "Don't wait for opportunity. Create it.", author: "Unknown" },
+  { content: "Sometimes we're tested not to show our weaknesses, but to discover our strengths.", author: "Unknown" },
+  { content: "Dream bigger. Do bigger.", author: "Unknown" },
+  { content: "Do something today that your future self will thank you for.", author: "Unknown" },
+  { content: "If you get tired, learn to rest, not to quit.", author: "Banksy" },
+  { content: "Discipline is doing what needs to be done, even if you don't want to.", author: "Unknown" },
+  { content: "Don't call it a dream, call it a plan.", author: "Unknown" },
+  { content: "Work hard in silence, let your success be your noise.", author: "Frank Ocean" },
+  { content: "Difficult roads often lead to beautiful destinations.", author: "Unknown" },
+  { content: "Focus on being productive instead of busy.", author: "Tim Ferriss" },
+  { content: "The key to success is to start before you are ready.", author: "Marie Forleo" },
+  { content: "Strive for progress, not perfection.", author: "Unknown" },
+  { content: "Don't limit your challenges. Challenge your limits.", author: "Unknown" },
+  { content: "We generate fears while we sit. We overcome them by action.", author: "Dr. Henry Link" },
+  { content: "A little progress each day adds up to big results.", author: "Unknown" },
+  { content: "Be stronger than your excuses.", author: "Unknown" },
+  { content: "You don't have to be extreme, just consistent.", author: "Unknown" },
+  { content: "Don't wish it were easier. Wish you were better.", author: "Jim Rohn" },
+  { content: "Success is the sum of small efforts, repeated day in and day out.", author: "Robert Collier" },
+  { content: "Success is liking yourself, liking what you do, and liking how you do it.", author: "Maya Angelou" },
+  { content: "Quality means doing it right when no one is looking.", author: "Henry Ford" },
+  { content: "If opportunity doesn't knock, build a door.", author: "Milton Berle" },
+  { content: "Motivation is what gets you started. Habit is what keeps you going.", author: "Jim Ryun" },
+  { content: "Perseverance is not a long race; it is many short races one after another.", author: "Walter Elliot" },
+  { content: "The only way to achieve the impossible is to believe it is possible.", author: "Charles Kingsleigh" },
+  { content: "Your time is limited, don't waste it living someone else's life.", author: "Steve Jobs" },
+  { content: "If you want something you've never had, you must be willing to do something you’ve never done.", author: "Thomas Jefferson" },
+  { content: "A winner is a dreamer who never gives up.", author: "Nelson Mandela" },
+  { content: "Be so good they can't ignore you.", author: "Steve Martin" },
+  { content: "Work hard, stay humble.", author: "Unknown" },
+  { content: "Progress, not perfection.", author: "Unknown" },
+  { content: "You have within you right now, everything you need to deal with whatever the world throws at you.", author: "Brian Tracy" },
+  { content: "Start where you are. Use what you have. Do what you can.", author: "Arthur Ashe" },
+  { content: "Do one thing every day that scares you.", author: "Eleanor Roosevelt" },
+  { content: "Doubt kills more dreams than failure ever will.", author: "Suzy Kassem" },
+  { content: "The way to get started is to quit talking and begin doing.", author: "Walt Disney" },
+  { content: "Success usually comes to those who are too busy to be looking for it.", author: "Henry David Thoreau" },
+  { content: "Don't be afraid to give up the good to go for the great.", author: "John D. Rockefeller" },
+  { content: "I find that the harder I work, the more luck I seem to have.", author: "Thomas Jefferson" },
+  { content: "Opportunities don't happen. You create them.", author: "Chris Grosser" },
+  { content: "Don't be pushed around by the fears in your mind. Be led by the dreams in your heart.", author: "Roy T. Bennett" },
+  { content: "The only limit to our realization of tomorrow will be our doubts of today.", author: "Franklin D. Roosevelt" },
+  { content: "Act as if what you do makes a difference. It does.", author: "William James" },
+  { content: "Hard work beats talent when talent doesn't work hard.", author: "Tim Notke" },
+  { content: "Your attitude, not your aptitude, will determine your altitude.", author: "Zig Ziglar" },
+  { content: "Don't count the days, make the days count.", author: "Muhammad Ali" },
+  { content: "Do something today that your future self will thank you for.", author: "Sean Patrick Flanery" },
+  { content: "Failure will never overtake me if my determination to succeed is strong enough.", author: "Og Mandino" },
+  { content: "It always seems impossible until it's done.", author: "Nelson Mandela" },
+  { content: "Start each day with a positive thought and a grateful heart.", author: "Roy T. Bennett" },
+  { content: "Push harder than yesterday if you want a different tomorrow.", author: "Unknown" },
+  { content: "You didn't come this far to only come this far.", author: "Unknown" },
+  { content: "Difficult doesn't mean impossible.", author: "Unknown" },
+  { content: "Every day may not be good, but there's something good in every day.", author: "Alice Morse Earle" },
+  { content: "Keep your eyes on the stars, and your feet on the ground.", author: "Theodore Roosevelt" },
+  { content: "Courage is one step ahead of fear.", author: "Coleman Young" },
+  { content: "Be kind whenever possible. It is always possible.", author: "Dalai Lama" },
+  { content: "Sometimes you win, sometimes you learn.", author: "John C. Maxwell" },
+  { content: "The best view comes after the hardest climb.", author: "Unknown" },
+  { content: "You don't have to see the whole staircase, just take the first step.", author: "Martin Luther King Jr." },
+  { content: "Don't just exist, live.", author: "Unknown" },
+  { content: "Don't fear failure. Fear being in the exact same place next year as you are today.", author: "Unknown" },
+  { content: "Start small. Think big. Don't stop.", author: "Unknown" },
+  { content: "Stay positive. Work hard. Make it happen.", author: "Unknown" },
+  { content: "If you can dream it, you can do it.", author: "Walt Disney" },
+  { content: "Failure is not the opposite of success; it's part of success.", author: "Arianna Huffington" },
+  { content: "If you believe it will work out, you'll see opportunities. If you believe it won’t, you’ll see obstacles.", author: "Wayne Dyer" },
+  { content: "Good things take time.", author: "Unknown" },
+  { content: "You are stronger than you think.", author: "Unknown" },
+  { content: "A goal without a plan is just a wish.", author: "Antoine de Saint-Exupéry" },
+  { content: "The expert in anything was once a beginner.", author: "Helen Hayes" },
+  { content: "Make each day your masterpiece.", author: "John Wooden" },
+  { content: "Don't wait for the right moment. Create it.", author: "Unknown" },
+  { content: "Rise up. Start fresh. See the bright opportunity in each new day.", author: "Unknown" },
+  { content: "Dare to begin.", author: "Unknown" },
+  { content: "Your vibe attracts your tribe.", author: "Unknown" },
+  { content: "Small steps every day lead to big results.", author: "Unknown" },
+  { content: "Be fearless in the pursuit of what sets your soul on fire.", author: "Jennifer Lee" },
+  { content: "Stars can't shine without darkness.", author: "Unknown" },
+  { content: "You are enough just as you are.", author: "Meghan Markle" },
+  { content: "A smooth sea never made a skilled sailor.", author: "Franklin D. Roosevelt" },
+  { content: "Be yourself; everyone else is already taken.", author: "Oscar Wilde" },
+  { content: "Wherever you go, go with all your heart.", author: "Confucius" },
+  { content: "You can if you think you can.", author: "George Reeves" },
+  { content: "Keep going until you're proud.", author: "Unknown" },
+  { content: "Your potential is endless.", author: "Unknown" },
+  { content: "Collect moments, not things.", author: "Unknown" },
+  { content: "Don't count the things you do, do the things that count.", author: "Zig Ziglar" },
+  { content: "The best revenge is massive success.", author: "Frank Sinatra" },
+  { content: "Be the energy you want to attract.", author: "Unknown" },
+  { content: "Great things take time. Be patient.", author: "Unknown" },
+  { content: "Stop doubting yourself. Work hard and make it happen.", author: "Unknown" },
+  { content: "Be proud of how hard you're trying.", author: "Unknown" },
+  { content: "Focus on the step in front of you, not the whole staircase.", author: "Unknown" },
+  { content: "Never stop learning, because life never stops teaching.", author: "Unknown" },
+  { content: "You got this.", author: "Unknown" },
+  { content: "Keep moving forward.", author: "Walt Disney" },
+];
+
+
+  // --- ELEMENTS ---
+  const quoteText = document.querySelector(".q-quote");
+  const quoteAuthor = document.querySelector(".q-name");
+  const newQuoteBtn = document.getElementById("newQuote");
+
+  // --- SHUFFLE FUNCTION ---
+  function shuffleArray(array) {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
   }
-  quoteBtn.classList.remove("loading");
-  quoteBtn.innerText = "New Quote";
-}
+
+  // --- LOCAL STORAGE KEYS ---
+  const STORAGE_KEY_QUOTES = "dailyQuotes";
+  const STORAGE_KEY_DATE = "quoteShuffleDate";
+
+  // --- GET TODAY'S DATE (YYYY-MM-DD) ---
+  function getToday() {
+    return new Date().toISOString().split("T")[0];
+  }
+
+  // --- LOAD OR GENERATE SHUFFLED QUOTES ---
+  let shuffledQuotes;
+  const savedDate = localStorage.getItem(STORAGE_KEY_DATE);
+  const savedQuotes = localStorage.getItem(STORAGE_KEY_QUOTES);
+
+  if (savedDate === getToday() && savedQuotes) {
+    shuffledQuotes = JSON.parse(savedQuotes);
+  } else {
+    shuffledQuotes = shuffleArray(quotes);
+    localStorage.setItem(STORAGE_KEY_QUOTES, JSON.stringify(shuffledQuotes));
+    localStorage.setItem(STORAGE_KEY_DATE, getToday());
+  }
+
+  let currentIndex = 0;
+
+  // --- SHOW QUOTE FUNCTION ---
+  function showQuote() {
+    if (currentIndex >= shuffledQuotes.length) {
+      shuffledQuotes = shuffleArray(quotes);
+      localStorage.setItem(STORAGE_KEY_QUOTES, JSON.stringify(shuffledQuotes));
+      currentIndex = 0;
+    }
+    const quote = shuffledQuotes[currentIndex];
+    quoteText.textContent = quote.content;
+    quoteAuthor.textContent = quote.author;
+    currentIndex++;
+  }
+
+  newQuoteBtn.addEventListener("click", showQuote);
+  showQuote();
 
 speechBtn.addEventListener("click", () => {
   let utterance = new SpeechSynthesisUtterance(
